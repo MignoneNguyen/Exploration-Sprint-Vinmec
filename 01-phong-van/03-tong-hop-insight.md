@@ -14,7 +14,7 @@ Sáu nguồn, chi tiết ở các file cùng thư mục:
 | --- | --- | --- |
 | Review App Store | [01-desk-research.md](01-desk-research.md) | 11 review gần nhất |
 | Facebook | [01-desk-research.md](01-desk-research.md) | 4 bài đăng, 8 trường hợp (FB1–FB7, FB3 tách thành FB3a/FB3b) |
-| TikTok | [01-desk-research.md](01-desk-research.md) | 5 video, 4 đã ghi chép |
+| TikTok | [01-desk-research.md](01-desk-research.md) | 5 video, 4 có ghi chép (TT1–TT4) |
 | Tự dùng MyVinmec | [00-myvinmec-walkthrough.md](00-myvinmec-walkthrough.md) | 1 lần, khoảng 8 phút (18/10/2026) |
 | Chính sách chính thức của Vinmec (CS) | [04-chinh-sach-vinmec.md](04-chinh-sach-vinmec.md) | 9 văn bản, truy cập 19/10/2026 |
 | Phỏng vấn | [P1](survey-logs/P1.md) · [P2](survey-logs/P2.md) · [P3](survey-logs/P3.md) · [P4](survey-logs/P4.md), theo [interview guide](02-interview-guide.md) | 4 người, khoảng 40–80 tuổi (17–18/10/2026, P1 bổ sung 19/10) |
@@ -30,7 +30,7 @@ Sáu nguồn, chi tiết ở các file cùng thư mục:
 
 1. **H4 (chính)** – Sau khi đặt lịch, bệnh nhân không biết bác sĩ, dịch vụ hoặc giờ khám đã bị thay đổi, hay còn thiếu bước chuẩn bị nào, cho đến khi đến viện. Hệ quả: đi lại vô ích, xếp hàng lại, mất niềm tin.
 2. **H5 (phụ)** – Hệ thống không nhận ra cùng một bệnh nhân qua các lần khám hoặc các diện khám (gói, công ty, cá nhân), nên bệnh nhân bị hỏi lại và hồ sơ bị tách rời.
-3. **H1 (đã loại)** – Bệnh nhân không biết nên đặt chuyên khoa hay bác sĩ nào. MyVinmec đã có tính năng đáp ứng (trợ lý MIA, đặt lịch theo triệu chứng), và 4/4 người phỏng vấn tự xử lý được.
+3. **H1 (đã loại)** – Bệnh nhân không biết nên đặt chuyên khoa hay bác sĩ nào. MyVinmec đã có tính năng đáp ứng (trợ lý MIA, đặt lịch theo triệu chứng), và 4/4 người phỏng vấn tự xử lý được khi khám ở các bệnh viện khác.
 4. **H2, H3 (dự phòng)** – Về nhận kết quả: không biết khi nào có kết quả (H2), không hiểu kết quả (H3).
 
 **Tiêu chí xác nhận:** một giả thuyết chỉ được xem là đúng khi có ít nhất 2 người *thuộc đúng nhóm người dùng* kể lại một lần cụ thể đã xảy ra.
@@ -41,8 +41,8 @@ Sáu nguồn, chi tiết ở các file cùng thư mục:
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | H4 – Không biết lịch bị đổi | 3 review lỗi đặt lịch, lịch sync chậm | FB1, FB2, FB3a, FB4, FB5 | – | Chưa kiểm chứng (chưa hoàn tất đặt lịch) | Quy trình cho phép tổng đài điều chỉnh giờ khám; thông báo lại dựa vào cuộc gọi. Cam kết "được biết bác sĩ điều trị" mâu thuẫn với FB4 | 0/4 xác nhận; không ai thuộc đúng nhóm | Bằng chứng desk research khá, giải thích được cơ chế; chưa có xác nhận trực tiếp |
 | H5 – Không nhận ra cùng một bệnh nhân | Không tìm được kết quả MRI cũ; liên kết hồ sơ chậm | FB3b, FB7 (chưa xác minh) | – | Liên kết hồ sơ phải tự khớp thông tin; Inpatient Tracking không thấy hồ sơ | Một mã y tế cho mỗi người, nhưng app chỉ liên kết khi thông tin khớp; người bệnh chịu trách nhiệm giữ thông tin khớp | P1 xác nhận hồ sơ không đồng bộ giữa các nơi khám; 4/4 tự giữ kết quả | Tín hiệu khá: giả thuyết duy nhất có xác nhận trực tiếp từ phỏng vấn |
-| H1 – Không biết chọn khoa | Không có chỗ review bác sĩ | – | TT5: tìm review bác sĩ ngoài app | Đã có MIA và đặt lịch theo triệu chứng | – | 4/4 tự xử lý được | Loại. Chọn bác sĩ là tín hiệu yếu |
-| H2 – Không biết khi nào có kết quả | Khám thứ Bảy không thấy kết quả trên app | – | – | – | – | 0/4 | Không ủng hộ |
+| H1 – Không biết chọn khoa | Không có chỗ review bác sĩ | – | TT4: tìm review bác sĩ ngoài app | Đã có MIA và đặt lịch theo triệu chứng | – | 4/4 tự xử lý được | Loại. Ít người gặp vấn đề trong phần này |
+| H2 – Không biết khi nào có kết quả | Khám thứ Bảy không thấy kết quả trên app | – | – | – | – | 0/4 | Không ủng hộ. Ít người gặp vấn đề trong phần này |
 | H3 – Không hiểu kết quả | – | – | – | – | Cam kết được tư vấn khi có kết quả | 1/4 | Yếu |
 
 Kết quả phỏng vấn theo giả thuyết:
@@ -69,7 +69,7 @@ Phát hiện ngoài giả thuyết:
 - **Chờ đợi đông (P1, P3, P4):** P1 đưa mẹ đi khám mất cả ngày (8 giờ sáng đến 8 giờ tối, riêng chờ chụp chiếu 6–7 tiếng); P3 và P4 chờ ít nhất 2 giờ. Chủ yếu ở viện công, ngoài phạm vi.
 - **Đối chứng AI ở sảnh:** theo lời kể của P4, Bệnh viện 175 dùng AI ở sảnh để sắp xếp bác sĩ. Chưa đối chiếu với nguồn công khai.
 
-**Ngoài phạm vi AI:** phần lớn phàn nàn trên Facebook và TikTok là về thái độ nhân viên, thiếu nhân sự, cơ sở vật chất và chuyên môn (FB6, TT1, TT3), cùng thời gian chờ ở viện công (P1, P3, P4). Đây là vấn đề vận hành và con người, AI không giải quyết được. Ghi nhận rõ để không thổi phồng vai trò của AI.
+**Ngoài phạm vi AI:** phần lớn phàn nàn trên Facebook và TikTok là về thái độ nhân viên, thiếu nhân sự, cơ sở vật chất và chuyên môn (FB6, TT1, TT2), cùng thời gian chờ ở viện công (P1, P3, P4). Đây là vấn đề vận hành và con người, AI không giải quyết được. Ghi nhận rõ để không thổi phồng vai trò của AI.
 
 ## 6. Hạn chế
 
@@ -86,16 +86,12 @@ Phát hiện ngoài giả thuyết:
 
 Need statement chính thức, bằng chứng và cách đo: [03-need-statement](../03-need-statement/need-statement.md).
 
-**Kế hoạch kiểm chứng nếu được chọn vào sprint:** tuần đầu phỏng vấn 3–5 phụ nữ mang thai hoặc phụ huynh đặt lịch trước tại Vinmec (khám thai theo gói, tiêm chủng, khám nhi), tuyển từ các nhóm review Vinmec trên Facebook; xin xem màn hình My visits và thông báo khi có thay đổi lịch. Song song, hỏi điều phối lịch về cách ghi thay đổi, và hỏi khách khám theo công ty về việc liên kết hồ sơ (H5).
+**Kế hoạch kiểm chứng nếu được chọn vào sprint:** tuần đầu phỏng vấn 3–5 phụ nữ mang thai hoặc phụ huynh đặt lịch trước tại Vinmec (khám thai theo gói, tiêm chủng, khám nhi), tuyển từ các nhóm review Vinmec trên Facebook; xin xem màn hình My visits và thông báo khi có thay đổi lịch. Song song, hỏi điều phối lịch về cách ghi thay đổi, và hỏi khách khám theo công ty về việc liên kết hồ sơ (H5). Bộ câu hỏi đã sửa sau P1–P4: [interview guide bản 2](02-interview-guide-v2.md).
 
 ## 8. Tài liệu tham khảo
 
 - **Chính sách chính thức của Vinmec:** 9 nguồn, xem [04-chinh-sach-vinmec.md, mục 4](04-chinh-sach-vinmec.md#4-nguồn).
 - **Nguồn bên thứ ba:** [MyVinmec trên App Store](https://apps.apple.com/app/id1494832536) (review 1–2 sao và mô tả tính năng); [Medpro: Bệnh viện Vinmec có khám bảo hiểm y tế không?](https://medpro.vn/tin-tuc/benh-vien-vinmec-co-kham-bao-hiem-y-te-khong)
-- **Mạng xã hội:** Facebook, 4 bài đăng (1 bài trong nhóm review sinh con tại Vinmec, 3 bài khác), xem ngày 17/10/2026; TikTok, 5 video review Vinmec, xem ngày 18/10/2026. Nội dung đã ẩn danh (FB1–FB7, TT1–TT5); không lưu link để bảo vệ người đăng.
+- **Mạng xã hội:** Facebook, 4 bài đăng (1 bài trong nhóm review sinh con tại Vinmec, 3 bài khác), xem ngày 17/10/2026; TikTok, 5 video review Vinmec, xem ngày 18/10/2026. Nội dung đã ẩn danh (FB1–FB7, TT1–TT3); không lưu link để bảo vệ người đăng.
 - **Dữ liệu sơ cấp:** phỏng vấn P1–P4 (17–18/10/2026, P1 bổ sung 19/10); tự dùng MyVinmec, ghi màn hình ngày 18/10/2026 (khoảng 8 phút); ảnh chụp 11 review App Store gần nhất.
 - **Phương pháp và tài liệu khóa học:** Rob Fitzpatrick, *The Mom Test*; đề bài Exploration Sprint 6 tuần tại Vinmec (mục 6.1, 6.4); slide khóa học Human-Centered AI Design, AI Product Thinking & Requirements (Day 05), Xác định bài toán kinh doanh cho AI (Day 02), AI Ethics, Responsible AI & Compliance, Prototype Interview, ví dụ phỏng vấn tốt và chưa tốt.
-
----
-
-*Phần do AI hỗ trợ: Claude soạn cấu trúc, diễn đạt và bảng đối chiếu từ ghi chép discovery; việc chọn giả thuyết, tiêu chí và kết luận do người làm quyết định.*

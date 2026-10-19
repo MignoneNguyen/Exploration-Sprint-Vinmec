@@ -73,7 +73,3 @@ Từ khóa khẩn cấp (so khớp không dấu) nằm trong `TU_KHOA_KHAN_CAP` 
 | --- | --- | --- | --- |
 | v1 | 19/10/2026 | Bản đầu | – |
 | | | *Ghi tiếp sau mỗi vòng thử* | |
-
----
-
-*Phần do AI hỗ trợ: Claude soạn prompt, schema và code của prototype theo yêu cầu và phạm vi trong BRD rút gọn; người làm duyệt và sửa sau khi thử.*

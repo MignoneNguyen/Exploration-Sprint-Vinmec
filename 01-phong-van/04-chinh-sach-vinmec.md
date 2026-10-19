@@ -26,7 +26,7 @@ Nguồn chính thức của Vinmec, truy cập 19/10/2026. Dùng để hiểu **
 | Một mã y tế cho mỗi bệnh nhân | Liên kết phụ thuộc vào việc khớp thông tin; FB7 kể bị tách hai mã (chưa xác minh); P1 có hồ sơ không đồng bộ giữa các nơi khám | H5 |
 | Người bệnh phải báo khi thông tin thay đổi | Gánh nặng giữ hồ sơ khớp nằm ở người bệnh; 4/4 người phỏng vấn tự giữ kết quả | H5 |
 | Thông tin bằng ngôn ngữ người bệnh hiểu được | Trợ lý MIA chỉ hỗ trợ tiếng Việt, dù app có tùy chọn đặt lịch cho người nước ngoài | Ngoài phạm vi |
-| Báo trước chi phí ước tính | App hiện phí khám dự kiến và tiền cọc; TT4 cho thấy quyền lợi bảo hiểm cho trẻ em vẫn khó hiểu | Phụ |
+| Báo trước chi phí ước tính | App hiện phí khám dự kiến và tiền cọc; TT3 cho thấy quyền lợi bảo hiểm cho trẻ em vẫn khó hiểu | Phụ |
 
 **Nhận xét:** khoảng cách lớn nhất nằm ở hai chỗ: quy trình cho phép thay đổi giờ khám và bác sĩ nhưng thông báo không theo kịp, và trách nhiệm giữ thông tin khớp được đặt lên người bệnh. Cả hai đều trùng với H4 và H5.
 
@@ -51,7 +51,3 @@ Các ràng buộc này được đưa vào [PRD của prototype](../05-prototype
 7. [Outpatient examination procedure at Vinmec](https://vinmec.com/eng/article/outpatient-examination-procedure-at-vinmec-en)
 8. [Trang đăng ký khám](https://vinmec.com/dat-kham)
 9. [Giới thiệu Hệ thống Y tế Vinmec](https://www.vinmec.com/vie/bai-viet/gioi-thieu-ve-he-thong-y-te-vinmec-vi)
-
----
-
-*Phần do AI hỗ trợ: Claude tóm tắt và đối chiếu chính sách với bằng chứng discovery; người làm chọn nguồn và rút ra ràng buộc.*

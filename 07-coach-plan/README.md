@@ -29,7 +29,7 @@ gantt
     Kiểm thử, sửa (2 vòng)      :s4, 2026-11-23, 2026-12-05
     Bàn giao                    :s5, 2026-12-07, 2026-12-12
     section Cổng duyệt
-    Kiểm tra đầu vào (≥80%)     :milestone, m0, 2026-10-28, 0d
+    Kiểm tra đầu vào (≥80%, mục bắt buộc 100%) :milestone, m0, 2026-10-28, 0d
     Cổng 1 - hội tụ bài toán    :milestone, m1, 2026-11-13, 0d
     Rà soát giữa kỳ             :milestone, m2, 2026-11-27, 0d
     Cổng 2 - chọn vào Demo Day  :milestone, m3, 2026-12-04, 0d
@@ -38,13 +38,21 @@ gantt
 
 | Tuần (mốc tương đối) | Biodesign / SDLC | Nhóm phải có trước thứ Sáu | Mình làm gì |
 | --- | --- | --- | --- |
-| 0 | Lập kế hoạch | NDA, đào tạo bắt buộc đạt; mỗi cặp chọn 1 khoảnh khắc và viết câu hỏi sàng lọc người phỏng vấn | Chia cặp theo thế mạnh; buổi tập phỏng vấn đóng vai, dùng The Mom Test |
+| 0 | Lập kế hoạch | NDA; 3 buổi đào tạo và **kiểm tra đầu vào** đạt (xem dưới bảng); mỗi cặp chọn 1 khoảnh khắc và viết câu hỏi sàng lọc người phỏng vấn theo hành vi (mẫu: [interview guide bản 2](../01-phong-van/02-interview-guide-v2.md#4-tuyển-người-phỏng-vấn)) | Chia cặp theo thế mạnh; buổi tập phỏng vấn đóng vai, dùng The Mom Test; ôn cùng nhóm trước kiểm tra đầu vào |
 | 1 | Needs finding / phân tích yêu cầu | ≥3 phiếu quan sát hoặc phỏng vấn mỗi cặp, ghi theo mẫu chung; danh sách giả thuyết H1, H2… | Đi cùng mỗi cặp ít nhất một buổi; chấm phiếu trong 24 giờ |
 | 2 (= M nếu đúng kế hoạch) | Need statement + sàng lọc nhu cầu | Need statement theo Biodesign, ma trận sàng lọc, journey map → **Cổng 1** | Tập dượt trình bày; gộp bài trùng *trước* cổng |
 | 3 (M + 1 tuần) | Thiết kế, xây dựng | BRD rút gọn (vì sao làm, trong/ngoài phạm vi) rồi PRD (sản phẩm hành xử thế nào, tiêu chí chấp nhận), prototype trên dữ liệu giả | Duyệt phạm vi trước khi code; chặn tính năng ngoài need statement |
 | 4 (M + 2 tuần) | Kiểm thử vòng 1 | Thử với 3–5 người dùng Vinmec, report 4 phần → **rà soát giữa kỳ** | Kiểm tra log thử có người thật, có số đo |
 | 5 (M + 3 tuần) | Kiểm thử vòng 2 | Report vòng 2, đề xuất sơ bộ → **Cổng 2** | Phản biện như hội đồng: bằng chứng, rủi ro, chi phí |
 | 6 (cố định) | Bàn giao, quản lý thay đổi | Prototype đóng gói, đề xuất, kế hoạch khoa tiếp nhận → **Demo Day** | Cùng khoa lên kế hoạch tiếp nhận theo ADKAR |
+
+**Ngưỡng ≥80% của kiểm tra đầu vào là gì.** Theo đề, cuối tuần 0 (trước ngày onboard 29/10) có một bài kiểm tra sau 3 buổi đào tạo: định hướng, quy tắc dữ liệu, quan sát; phát triển an toàn; nội dung bắt buộc của Vinmec. Muốn được vào viện phải đạt **hai điều kiện cùng lúc**: điểm chung từ 80% trở lên, **và** các mục bắt buộc đúng 100%. Nghĩa là điểm cao vẫn trượt nếu sai một mục bắt buộc.
+
+Vì sao mình coi đây là mốc đầu tiên: một bạn chưa đạt thì chưa được vào khoa từ ngày onboard, cặp của bạn đó mất những ngày quan sát đầu của tuần 1. Mình làm ba việc:
+
+- **Hỏi ban tổ chức ngay tuần 0** những điều đề chưa nói: mục nào là bắt buộc, có được làm lại không, làm lại khi nào.
+- **Ôn theo các mục dễ là bắt buộc nhất:** quy tắc dữ liệu và an toàn người bệnh (xin đồng ý, ẩn danh, không chụp người hay giấy tờ y tế, không dùng dữ liệu thật, không đưa lời khuyên y khoa). Đây cũng là những quy tắc mình đã áp dụng trong bài này.
+- **Có phương án khi có bạn chưa đạt:** bạn đó làm phần desk research của cặp trong lúc chờ làm lại; nếu không được làm lại kịp, mình ghép lại cặp để không cặp nào vào khoa một mình.
 
 Nhịp tuần: thứ Hai sau buổi V-RIC, mỗi cặp nói một câu "tuần này kiểm chứng điều gì"; thứ Tư sau buổi Vinmec, cập nhật giả thuyết; thứ Sáu checkpoint và nộp báo cáo tuần, mình tổng hợp một bảng xanh/vàng/đỏ cho người hướng dẫn.
 
@@ -91,7 +99,3 @@ Mỗi cổng mình soát theo danh sách dưới. Phần lớn rút từ lỗi c
 - **Prototype:** chỉ dữ liệu giả lập hoặc đã khử định danh; có đường chuyển tuyến khẩn cấp; log thử có người thật và có số đo, ghi rõ mô hình AI và phiên bản prompt đã dùng; khóa API không nằm trong repo.
 
 Theo PMBOK, mình theo dõi 10 lĩnh vực bằng một bảng mỗi tuần, tập trung vào 5 lĩnh vực nhóm sinh viên hay bỏ sót: **phạm vi** (chặn tính năng thừa), **chất lượng** (danh sách trên), **rủi ro** (an toàn người bệnh trước tiên), **truyền thông** (báo cáo thứ Sáu) và **các bên liên quan** (bác sĩ đầu mối, điều dưỡng, khoa).
-
----
-
-*Phần do AI hỗ trợ: Claude soạn bản nháp theo khung người làm đưa ra (Biodesign, PMBOK, SDLC, quản lý thay đổi) và từ các lỗi tìm được khi rà soát bài; người làm chỉnh lại theo cách dẫn dắt của mình.*

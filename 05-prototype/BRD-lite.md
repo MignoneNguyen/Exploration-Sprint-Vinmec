@@ -14,7 +14,7 @@ Sau khi bệnh nhân đặt lịch, kế hoạch khám có thể thay đổi (b�
 | Giữ đúng cam kết với người bệnh | Quyền được biết bác sĩ điều trị, được thông tin bằng ngôn ngữ dễ hiểu | CS, FB4 |
 | Giảm việc lặp lại cho tổng đài | Người bệnh tự gọi để kiểm tra lịch khi trạng thái lịch nhảy | FB1 |
 | Giảm lượt khám phải hủy hoặc làm lại | Đến nơi không làm được thủ thuật, thiếu bước chuẩn bị bắt buộc | FB2, FB5 |
-| Có tiền lệ ở nơi khác | Tin nhắn lịch gắn với hệ thống lịch giảm 17,2% tỷ lệ bỏ hẹn ở Guy's and St Thomas' | BP1 |
+| Có tiền lệ ở nơi khác | Tin nhắn lịch gắn với hệ thống lịch giảm tương đối 17,2% tỷ lệ bỏ hẹn ở Guy's and St Thomas' (case study trước–sau, không có nhóm đối chứng) | BP1 |
 
 **Chưa có:** số liệu nền của Vinmec (tần suất thay đổi lịch, số cuộc gọi kiểm tra lịch) và chi phí tích hợp. Đây là lý do chưa làm BRD đầy đủ.
 
@@ -36,16 +36,15 @@ Prototype **không** chứng minh được vấn đề xảy ra thường xuyên
 
 ## 5. Các bên liên quan
 
-Bệnh nhân (người dùng chính), nhân viên điều phối lịch (người tạo thay đổi), tổng đài (nhận cuộc gọi khi bệnh nhân bấm "gọi tổng đài"), bác sĩ đầu mối (duyệt danh sách từ khóa khẩn cấp và nội dung chuẩn bị), đội MyVinmec và IT (sở hữu app, dữ liệu lịch), lãnh đạo khoa sản, nhi (quyết định tiếp nhận). Phân tích đầy đủ ở [need statement, mục 6.1](../03-need-statement/need-statement.md#61-các-bên-liên-quan-cho-h4).
+Bệnh nhân (người dùng chính), nhân viên điều phối lịch (người tạo thay đổi), tổng đài (nhận cuộc gọi khi bệnh nhân bấm "gọi tổng đài"), bác sĩ đầu mối (duyệt danh sách từ khóa khẩn cấp và nội dung chuẩn bị), đội MyVinmec và IT (sở hữu app, dữ liệu lịch), lãnh đạo khoa sản, nhi (quyết định tiếp nhận). Phân tích đầy đủ ở [need statement, mục 7.1](../03-need-statement/need-statement.md#71-các-bên-liên-quan-cho-h4).
 
 ## 6. Chỉ số thành công
 
 **Của sáng kiến** (khi triển khai thật; chưa có số nền, cần xin dữ liệu Vinmec ở tuần 1 sprint):
 
-1. Tỷ lệ lượt khám đã đặt mà đến nơi không làm được hoặc phải đổi.
-2. Trong các lượt có thay đổi: tỷ lệ bệnh nhân biết trước khi rời nhà.
-3. Số cuộc gọi tổng đài chỉ để kiểm tra lại lịch đã đặt.
-4. Thời gian chờ thêm do phải xếp lại hàng.
+- **Chỉ số chính** (outcome của need statement): tỷ lệ lượt khám đã đặt mà khi đến nơi không làm được hoặc phải đổi, trên tổng số lượt đặt trước của khoa sản, nhi.
+- **Chỉ số phụ** (theo [tiêu chí nhu cầu](../03-need-statement/need-statement.md#74-tiêu-chí-nhu-cầu-need-criteria)): tỷ lệ lượt có thay đổi mà bệnh nhân biết trước khi rời nhà; số cuộc gọi tổng đài chỉ để kiểm tra lại lịch; thời gian chờ thêm do phải xếp lại hàng.
+- Khung tính quy mô và dữ liệu cần xin: [need statement, mục 7.2](../03-need-statement/need-statement.md#72-thị-trường-khung-tính-chưa-có-số).
 
 **Của bước prototype** (thử với 2–3 người dùng): hiểu đúng thay đổi ≥ 2/3; thời gian đến khi hành động < 60 giây; hành động đúng ≥ 2/3; câu y khoa và khẩn cấp được chuyển đúng 100%; mức hài lòng ≥ 4/5. Cách đo chi tiết: [PRD.md, mục 6](PRD.md#6-tiêu-chí-chấp-nhận-khi-thử-với-người-dùng).
 
@@ -55,7 +54,3 @@ Bệnh nhân (người dùng chính), nhân viên điều phối lịch (ngườ
 - Giả định: bệnh nhân đọc thông báo trong app. Kênh Zalo hoặc SMS chưa được kiểm chứng.
 - Ràng buộc từ chính sách Vinmec: phải báo cho người dùng khi dữ liệu được xử lý tự động và cho phép từ chối; không chia sẻ thông tin sức khỏe khi chưa có đồng ý; không chẩn đoán ([04-chinh-sach-vinmec.md, mục 3](../01-phong-van/04-chinh-sach-vinmec.md#3-ràng-buộc-cho-giải-pháp-ai-rút-ra-từ-chính-sách)).
 - Ràng buộc của bài tập: 1 tuần; không có quyền truy cập hệ thống Vinmec; chỉ dữ liệu giả lập; người thử là người quen, không phải bệnh nhân Vinmec.
-
----
-
-*Phần do AI hỗ trợ: Claude soạn bản nháp từ need statement, chính sách Vinmec, best practice và phần rủi ro; người làm duyệt phạm vi và chỉ số.*

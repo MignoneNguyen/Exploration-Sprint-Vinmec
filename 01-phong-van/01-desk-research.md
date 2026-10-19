@@ -2,7 +2,7 @@
 
 > Các mã giả thuyết H1–H5 được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
 
-Nguồn thứ cấp, dùng để **đặt giả thuyết**, không thay cho phỏng vấn. Mọi trường hợp đã ẩn danh: không ghi tên, ảnh hay link cá nhân, không ghi chi tiết y tế. Danh sách link gốc lưu riêng, không đưa lên repo.
+Nguồn thứ cấp, dùng để **đặt giả thuyết**, không thay cho phỏng vấn. Mọi trường hợp đã ẩn danh: không ghi tên, ảnh hay link cá nhân, không ghi chi tiết y tế.
 
 ## 1. Review App Store của MyVinmec
 
@@ -42,13 +42,13 @@ Từ 4 bài đăng (1 bài trong nhóm review sinh con tại Vinmec, 3 bài khá
 
 ## 3. TikTok
 
-5 video review Vinmec, xem ngày 18/10/2026, đa số về sinh con và khám nhi. Video TT2 chưa ghi chép.
+5 video review Vinmec, xem ngày 18/10/2026, đa số về sinh con và khám nhi.
 
 | Mã | Nội dung chính | Liên quan |
 | --- | --- | --- |
 | TT1 | So với Tâm Anh: trang thiết bị chưa đủ, thiếu nhân sự; gọi nhân viên mất khoảng 10 phút; hay thiếu đồ dùng cần thiết | Vận hành, nhân sự, ngoài phạm vi AI. Tâm Anh là đối thủ được so sánh trực tiếp |
-| TT3 | Cơ sở vật chất chưa tốt; nhân viên làm gián đoạn giấc ngủ khi nằm viện | Nội trú, ngoài phạm vi |
-| TT4 | Bảo hiểm cho trẻ em | Thông tin quyền lợi khó hiểu, cùng hướng với chuyện thẻ chỉ áp dụng khi đặt lịch trước |
-| TT5 | Review bác sĩ Vinmec, bác sĩ nào hợp với vấn đề gì | Người dùng tìm review bác sĩ bên ngoài app. App có điểm đánh giá cho một số bác sĩ, nhưng review App Store vẫn phàn nàn không có chỗ review bác sĩ |
+| TT2 | Cơ sở vật chất chưa tốt; nhân viên làm gián đoạn giấc ngủ khi nằm viện | Nội trú, ngoài phạm vi |
+| TT3 | Bảo hiểm cho trẻ em | Thông tin quyền lợi khó hiểu, cùng hướng với chuyện thẻ chỉ áp dụng khi đặt lịch trước |
+| TT4 | Review bác sĩ Vinmec, bác sĩ nào hợp với vấn đề gì | Người dùng tìm review bác sĩ bên ngoài app. App có điểm đánh giá cho một số bác sĩ, nhưng review App Store vẫn phàn nàn không có chỗ review bác sĩ |
 
 Điểm chung được khen: sinh ở Vinmec không đau. Đây là thế mạnh, nên giữ khi trình bày bối cảnh.

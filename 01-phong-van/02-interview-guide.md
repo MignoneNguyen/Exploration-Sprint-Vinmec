@@ -1,4 +1,6 @@
-# Interview guide
+# Interview guide – phiên bản 1
+
+> **Đã có phiên bản 2:** [02-interview-guide-v2.md](02-interview-guide-v2.md), sửa theo bài học từ P1–P4. Bản 1 giữ nguyên để đối chiếu với phiếu P1–P4.
 
 Bộ câu hỏi và quy trình đã dùng cho P1–P4. Mã câu hỏi (A1–A17, B1–B7, K1–K3) khớp với phiếu ghi từng người. Các giả thuyết H1–H5 mà từng câu kiểm chứng được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
 

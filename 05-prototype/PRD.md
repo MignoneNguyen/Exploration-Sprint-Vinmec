@@ -75,7 +75,3 @@ Kịch bản thử và bảng log: [test-log.md](test-log.md).
 ## 7. Ngoài phạm vi của prototype
 
 Tích hợp hệ thống lịch thật; gửi SMS, Zalo, thông báo đẩy thật; đặt lịch mới, thanh toán; nội dung chuẩn bị do AI tự nghĩ ra; tư vấn y khoa; quy trình nội bộ của điều phối lịch.
-
----
-
-*Phần do AI hỗ trợ: Claude soạn bản nháp từ BRD rút gọn, chính sách Vinmec và phần rủi ro; người làm duyệt yêu cầu và tiêu chí chấp nhận.*

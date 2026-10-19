@@ -18,8 +18,8 @@ Quy trình Biodesign có ba giai đoạn. Bài tập 1 tuần nằm gần hết 
 | Giai đoạn Biodesign | Bước | Trong bài này |
 | --- | --- | --- |
 | **Identify** | Needs finding: quan sát, phỏng vấn, xác định vấn đề | [01-phong-van](01-phong-van/): tự dùng app, desk research, chính sách Vinmec, 4 cuộc phỏng vấn; [02-journey-map](02-journey-map/) |
-| | Need statement: vấn đề – nhóm người dùng – kết quả mong muốn, không nêu giải pháp | [03-need-statement](03-need-statement/need-statement.md) |
-| | Needs screening: hiểu sâu bối cảnh, giải pháp hiện có, các bên liên quan, giá trị | [03-need-statement, mục Sàng lọc](03-need-statement/need-statement.md#6-sàng-lọc-nhu-cầu-needs-screening); [04-best-practice](04-best-practice/best-practice.md) (giải pháp hiện có trên thế giới) |
+| | Need statement theo mẫu "Cách để [vấn đề] ở [nhóm người] nhằm [kết quả mong muốn]", không nêu giải pháp; thử thu hẹp, mở rộng từng thành phần (need scoping) | [03-need-statement](03-need-statement/need-statement.md) |
+| | Needs screening: hiểu nền tảng vấn đề, giải pháp hiện có, các bên liên quan, thị trường, chọn nhu cầu; tiêu chí nhu cầu (need criteria) | [03-need-statement, mục Sàng lọc](03-need-statement/need-statement.md#7-sàng-lọc-nhu-cầu-needs-screening); [chính sách Vinmec](01-phong-van/04-chinh-sach-vinmec.md) (nền tảng vấn đề); [04-best-practice](04-best-practice/best-practice.md) (giải pháp hiện có trên thế giới) |
 | **Invent** | Tạo và sàng lọc ý tưởng, làm prototype | [05-prototype](05-prototype/) |
 | | Rủi ro, quy định | [06-rui-ro-dao-duc](06-rui-ro-dao-duc/) |
 | **Implement** | Chiến lược triển khai, kế hoạch kinh doanh | Ngoài phạm vi bài tập; thuộc tuần 5–6 của sprint (đề xuất, thẩm định, khoa tiếp nhận) |
@@ -27,7 +27,8 @@ Quy trình Biodesign có ba giai đoạn. Bài tập 1 tuần nằm gần hết 
 **Điều Biodesign thay đổi trong bài làm:**
 
 - Outcome của need statement được sửa từ "biết sớm khi lịch thay đổi" sang "giảm số lần đến viện mà không được khám đúng như đã đặt", vì Biodesign yêu cầu need statement không ngầm chứa giải pháp.
-- Thêm bước **sàng lọc nhu cầu** để so sánh H1–H5 bằng cùng một bộ tiêu chí, thay vì chỉ chọn H4 theo cảm nhận.
+- Câu need statement được viết lại theo đúng mẫu Stanford *"A way to [problem] in [population] in order to [outcome]"*: bản trước đặt outcome vào chỗ của vấn đề (lỗi "nhầm vấn đề với outcome" trong hướng dẫn của Stanford). Need statement giờ chỉ giữ một outcome, có người quyết định (lãnh đạo khoa sản, nhi), có bảng thử phạm vi; các kết quả phụ chuyển sang tiêu chí nhu cầu.
+- Thêm bước **sàng lọc nhu cầu** để so sánh H1–H5 bằng cùng một bộ tiêu chí, thay vì chỉ chọn H4 theo cảm nhận. Phần thị trường mới có khung tính, chưa có số; cần dữ liệu Vinmec ở tuần 1.
 
 ## 2. SDLC
 
@@ -51,13 +52,13 @@ PMBOK bản 6 chia quản lý dự án thành 10 lĩnh vực kiến thức. (B�
 | 1. Tích hợp (Integration) | README nối mọi phần thành một mạch: bằng chứng → giả thuyết → need statement → prototype. File giải thích mã dùng chung cho mọi phần |
 | 2. Phạm vi (Scope) | Chọn hẹp một khoảnh khắc (Đặt lịch, sau khi đặt đến ngày khám), một nhóm người dùng; ghi rõ phần ngoài phạm vi AI (nhân sự, cơ sở vật chất) |
 | 3. Tiến độ (Schedule) | 5 bước theo đề, hạn 19/10/2026 |
-| 4. Chi phí (Cost) | Chưa có số liệu chi phí. Ghi nhận chi phí ẩn của vấn đề: chuyến đi lại vô ích, cuộc gọi tổng đài chỉ để kiểm tra lịch (chỉ số 3 của need statement) |
+| 4. Chi phí (Cost) | Chưa có số liệu chi phí. Ghi nhận chi phí ẩn của vấn đề: chuyến đi lại vô ích, cuộc gọi tổng đài chỉ để kiểm tra lịch (chỉ số phụ trong tiêu chí nhu cầu, need statement mục 7.4); khung tính chi phí ở mục 7.2 |
 | 5. Chất lượng (Quality) | Tiêu chí xác nhận giả thuyết; đối chiếu từng nguồn best practice với bài gốc; rà soát mâu thuẫn trong ghi chép phỏng vấn |
 | 6. Nguồn lực (Resource) | Người phỏng vấn tự làm; AI (Claude) hỗ trợ soạn và đối chiếu, ghi rõ ở từng file |
 | 7. Truyền thông (Communications) | Repo theo cấu trúc đề; slide 10 trang cho buổi trình bày |
 | 8. Rủi ro (Risk) | Rủi ro của bằng chứng (nguồn thiên lệch, tuyển sai nhóm) ở [mục Hạn chế](01-phong-van/03-tong-hop-insight.md#6-hạn-chế); rủi ro của giải pháp ở [06](06-rui-ro-dao-duc/) |
 | 9. Mua sắm (Procurement) | Trong bài tập: prototype không khóa vào một nhà cung cấp AI, chạy được với Claude (Anthropic) hoặc GPT (OpenAI) qua file `.env`, cùng prompt và schema. Trong sprint: chọn nhà cung cấp AI theo quy định dữ liệu của Vinmec; tích hợp với hệ thống lịch, nhà cung cấp kênh tin nhắn (Zalo, SMS) |
-| 10. Các bên liên quan (Stakeholder) | Phân tích các bên liên quan ở [mục Sàng lọc nhu cầu](03-need-statement/need-statement.md#6-sàng-lọc-nhu-cầu-needs-screening); đối chiếu cam kết của Vinmec với người bệnh ở [04-chinh-sach-vinmec.md](01-phong-van/04-chinh-sach-vinmec.md) |
+| 10. Các bên liên quan (Stakeholder) | Phân tích các bên liên quan ở [mục Sàng lọc nhu cầu](03-need-statement/need-statement.md#71-các-bên-liên-quan-cho-h4); đối chiếu cam kết của Vinmec với người bệnh ở [04-chinh-sach-vinmec.md](01-phong-van/04-chinh-sach-vinmec.md) |
 
 ## 4. Quản lý thay đổi
 
@@ -85,7 +86,3 @@ Dùng theo hai nghĩa:
 - [10 Knowledge Areas của PMP áp dụng trong dự án IT](https://khoingo.edu.vn/pmp-in-it/fundamentals-it/10-knowledge-areas-pmp-du-an-it/) – Khôi Ngô Edu
 - Slide khóa học: AI Product Thinking & Requirements (Day 05); Xác định bài toán kinh doanh cho AI (Day 02); Human-Centered AI Design; AI Ethics, Responsible AI & Compliance
 - Rob Fitzpatrick, *The Mom Test*
-
----
-
-*Phần do AI hỗ trợ: Claude soạn bảng ánh xạ các khung vào bài làm theo yêu cầu của người làm; người làm chọn khung tham chiếu và duyệt cách áp dụng.*

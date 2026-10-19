@@ -8,7 +8,7 @@
 
 | # | Rủi ro | Hậu quả | Cách giảm thiểu |
 | --- | --- | --- | --- |
-| R1 | AI báo sai thay đổi (báo đổi khi không đổi, hoặc bỏ sót thay đổi) | Bệnh nhân đi lại vô ích hoặc bỏ lỡ buổi khám, đúng cái need statement muốn giảm | AI chỉ đọc từ dữ liệu lịch của bệnh viện, không tự suy đoán; mỗi tin nhắn kèm thông tin gốc (bác sĩ, giờ, dịch vụ cũ và mới); nghiêng về báo dư; có nút "gọi tổng đài để xác nhận" |
+| R1 | AI báo sai thay đổi (báo đổi khi không đổi, hoặc bỏ sót thay đổi, cập nhật chậm) | Bệnh nhân đi lại vô ích hoặc bỏ lỡ buổi khám, đúng cái need statement muốn giảm | AI chỉ đọc từ dữ liệu lịch của bệnh viện, không tự suy đoán; mỗi tin nhắn kèm thông tin gốc (bác sĩ, giờ, dịch vụ cũ và mới); nghiêng về báo dư; có nút "gọi tổng đài để xác nhận" |
 | R2 | AI trả lời câu hỏi y khoa (ví dụ "đổi sang siêu âm 2D có ảnh hưởng gì không?") | Lời khuyên y khoa sai, không có bác sĩ chịu trách nhiệm | Giới hạn phạm vi: chỉ giải thích lịch và bước chuẩn bị theo danh sách có sẵn; câu hỏi ngoài phạm vi được chuyển cho nhân viên, có thời hạn phản hồi rõ ràng |
 | R3 | AI tự tạo bước chuẩn bị không có trong hướng dẫn của khoa | Bệnh nhân chuẩn bị sai (ví dụ nhịn ăn không cần thiết) | Bước chuẩn bị lấy nguyên văn từ danh sách đã được khoa duyệt; AI chỉ diễn đạt lại, không thêm |
 | R4 | Lộ thông tin cá nhân, lịch khám (dịch vụ sản, nhi là thông tin nhạy cảm) | Vi phạm quyền riêng tư | Prototype chỉ dùng dữ liệu tự mô phỏng; tin nhắn không ghi chi tiết dịch vụ nhạy cảm trên màn hình khóa. Prototype gửi dữ liệu lượt khám cho nhà cung cấp AI bên ngoài (Anthropic hoặc OpenAI), nên khi triển khai thật phải chọn nhà cung cấp theo quy định bảo vệ dữ liệu cá nhân hiện hành và quy định của Vinmec (thỏa thuận xử lý dữ liệu, nơi lưu dữ liệu), hoặc dùng mô hình chạy trong hạ tầng của Vinmec |
@@ -39,8 +39,3 @@ Prototype không phải kênh y tế khẩn cấp. Cần thể hiện rõ trong 
 - [x] Ẩn danh P1–P4; tuổi ghi theo khoảng; không ghi tên, không chụp ảnh người hay giấy tờ y tế
 - [ ] Ghi âm: chưa ghi rõ buổi nào có ghi âm, cần bổ sung
 - [x] Không đưa ra lời khuyên y khoa
-- [x] Ghi rõ phần do AI tạo ở cuối mỗi file và trong README
-
----
-
-*Phần do AI hỗ trợ: bản nháp do Claude soạn từ hướng prototype và bài học best practice; người làm cần rà soát và chỉnh theo prototype thực tế.*

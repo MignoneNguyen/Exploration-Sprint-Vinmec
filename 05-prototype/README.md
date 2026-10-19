@@ -89,7 +89,3 @@ Theo chính sách bảo vệ dữ liệu của Vinmec, màn hình bệnh nhân c
 - Không có kênh gửi thật (SMS, Zalo, thông báo đẩy); thông báo chỉ hiện trong màn hình mô phỏng.
 - Giả định lớn nhất: mọi thay đổi đều được nhân viên ghi vào hệ thống. Prototype không kiểm chứng được giả định này.
 - Claude và GPT có thể viết lời nhắn và phân loại câu hỏi khác nhau dù cùng prompt và schema. Mỗi lần đổi nhà cung cấp hoặc mô hình, chạy lại 6 kịch bản và câu thử y khoa; trong một vòng thử, mọi người thử dùng cùng một mô hình.
-
----
-
-*Phần do AI hỗ trợ: Claude viết code, prompt và kiểm thử theo phạm vi trong BRD rút gọn; người làm chạy thử với người dùng và quyết định sửa gì.*
