@@ -1,6 +1,6 @@
 # Need statement – Đặt lịch khám tại Vinmec
 
-> Các mã H1–H5 (giả thuyết) và FB, AS, P (nguồn) được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
+> Các mã H1–H5 (giả thuyết) và FB, AS, P, CS, BP (nguồn) được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
 
 ## 1. Need statement chính
 
@@ -12,8 +12,8 @@ So với bản nháp đầu, outcome được đổi từ "biết sớm khi lị
 
 | Thành phần | Nội dung | Vì sao |
 | --- | --- | --- |
-| Problem | Sau khi đặt lịch, kế hoạch khám thay đổi (đổi bác sĩ, đổi loại dịch vụ, thủ thuật không làm được, thiếu bước chuẩn bị bắt buộc) mà bệnh nhân không được báo trước | 5/8 trường hợp Facebook có cùng mẫu này (FB1, FB2, FB3a, FB4, FB5); 3 review App Store về lịch hẹn sync chậm |
-| Population | Phụ nữ mang thai và phụ huynh đặt lịch trước tại Vinmec (khám thai theo gói, tiêm chủng, khám nhi) | Cả 5 trường hợp Facebook ủng hộ H4 đều thuộc khoa sản, nhi, và đa số video TikTok cũng vậy; nhóm này đặt lịch lặp lại nhiều lần. Chưa có số liệu Vinmec xác nhận đây là nhóm lớn nhất. Không gồm: người lớn tuổi khám theo bảo hiểm ở viện công (P3, P4), ca khám gấp không đặt trước nhiều ngày (P2) |
+| Problem | Sau khi đặt lịch, kế hoạch khám thay đổi (đổi bác sĩ, đổi loại dịch vụ, thủ thuật không làm được, thiếu bước chuẩn bị bắt buộc) mà bệnh nhân không được báo trước | 5/8 trường hợp Facebook có cùng mẫu này (FB1, FB2, FB3a, FB4, FB5); 3 review App Store về lịch hẹn sync chậm. Chính sách Vinmec cho thấy cơ chế: tổng đài được phép điều chỉnh giờ khám sau khi đặt, nhưng việc báo lại dựa vào cuộc gọi; người bệnh có quyền được biết bác sĩ điều trị, trong khi FB4 bị đổi bác sĩ mà không được báo (CS) |
+| Population | Phụ nữ mang thai và phụ huynh đặt lịch trước tại Vinmec (khám thai theo gói, tiêm chủng, khám nhi) | Cả 5 trường hợp Facebook ủng hộ H4 đều thuộc khoa sản, nhi, và đa số video TikTok cũng vậy; nhóm này đặt lịch lặp lại nhiều lần. Chưa có số liệu Vinmec xác nhận đây là nhóm lớn nhất. Không gồm: người lớn tuổi khám theo bảo hiểm ở viện công (P3, P4), ca khám gấp không đặt trước nhiều ngày (P2), người khám định kỳ theo công ty (P1, thuộc hướng H5) |
 | Outcome | Giảm số lần đến viện mà không được khám hoặc làm dịch vụ đúng như đã đặt | Hệ quả bệnh nhân kể là đi lại vô ích, xếp hàng lại, mất niềm tin, cân nhắc đổi viện (FB2–FB5) |
 
 **Cách đo outcome** (chưa có số nền, cần xin dữ liệu Vinmec ở tuần 1):
@@ -30,20 +30,26 @@ So với bản nháp đầu, outcome được đổi từ "biết sớm khi lị
 | Facebook FB1, FB2, FB3a, FB4, FB5 | Trạng thái lịch nhảy qua lại; thủ thuật không làm được; 4D thành 2D; đổi bác sĩ không báo; thiếu bước bắt buộc, hôm sau mới gọi | Trung bình: cụ thể, gần đây, nhưng thiên về phàn nàn |
 | App Store (3 review, tháng 7/2026) | Lỗi đặt lịch, lịch hẹn sync chậm | Yếu: phần lớn là lỗi kỹ thuật |
 | Tự dùng MyVinmec | Không hoàn tất đặt lịch nên chưa thấy được màn hình sau khi đặt | Chưa có |
-| Phỏng vấn P1–P4 | 0/4 xác nhận; không ai thuộc đúng nhóm (P2 khám gấp qua hotline) | Chưa có |
+| Phỏng vấn P1–P4 | 0/4 xác nhận H4; không ai thuộc đúng nhóm (P2 khám gấp qua hotline; P1 không đặt lịch, đưa mẹ đi khám và khám định kỳ theo công ty). P1 ủng hộ H5 thay vì H4 | Chưa có |
+| Chính sách Vinmec (CS) | Quy trình cho phép điều chỉnh giờ khám và bác sĩ sau khi đặt; thông báo lại dựa vào tổng đài gọi. Cam kết "được biết bác sĩ điều trị" mâu thuẫn với FB4 | Trung bình: giải thích được cơ chế, nhưng không cho biết tần suất |
+| Best practice BP1–BP3 | Vấn đề cùng cơ chế (thông tin lịch không đến được bệnh nhân) đã được cải thiện ở NHS khi tin nhắn gắn với hệ thống lịch (BP1). Chưa ví dụ nào xử lý đúng trường hợp bệnh viện tự đổi kế hoạch | Gián tiếp: cho thấy outcome cải thiện được, không chứng minh vấn đề ở Vinmec |
 | Journey map | Cảm xúc thấp nhất ở ngày khám, ngay sau khoảng trống "sau đặt lịch" | Suy ra từ các nguồn trên |
 
-Chi tiết từng nguồn: [01-phong-van/01-desk-research.md](../01-phong-van/01-desk-research.md), [01-phong-van/03-tong-hop-insight.md](../01-phong-van/03-tong-hop-insight.md), [02-journey-map](../02-journey-map/).
+Chi tiết từng nguồn: [01-phong-van/01-desk-research.md](../01-phong-van/01-desk-research.md), [01-phong-van/04-chinh-sach-vinmec.md](../01-phong-van/04-chinh-sach-vinmec.md), [01-phong-van/03-tong-hop-insight.md](../01-phong-van/03-tong-hop-insight.md), [02-journey-map](../02-journey-map/).
 
 **Mức chắc chắn tổng thể: trung bình – thấp.** Đủ để chọn hướng làm prototype, chưa đủ để khẳng định vấn đề xảy ra thường xuyên. Theo tiêu chí đã đặt (ít nhất 2 người thuộc đúng nhóm kể một lần cụ thể), H4 vẫn là giả thuyết mở.
 
-**Các hướng đã loại:** H1 (chọn khoa, bác sĩ), vì MyVinmec đã có MIA và đặt lịch theo triệu chứng, và 4/4 người tự xử lý được; H2 (biết khi nào có kết quả), 0/3; H3 (hiểu kết quả), 1/3.
+**Các hướng đã loại:** H1 (chọn khoa, bác sĩ), vì MyVinmec đã có MIA và đặt lịch theo triệu chứng, và 4/4 người tự xử lý được; H2 (biết khi nào có kết quả), 0/4; H3 (hiểu kết quả), 1/4.
 
 ## 4. Need statement dự phòng (H5)
 
 > **Cách để bệnh nhân không phải khai lại thông tin và tìm được toàn bộ hồ sơ của mình, cho bệnh nhân khám tại Vinmec theo nhiều diện (gói khám, công ty, cá nhân), gặp tình trạng hệ thống tách họ thành nhiều hồ sơ riêng.**
 
-Bằng chứng: FB3b (gói khám bị hỏi lại mỗi lần), FB7 (hai mã hồ sơ không gộp), review không tìm được MRI cũ, app bắt tự sửa thông tin để liên kết hồ sơ, 3/3 người được hỏi tự giữ bản giấy.
+Bằng chứng: P1 (khám định kỳ theo công ty, mỗi năm một nơi, hồ sơ không đồng bộ), 4/4 người phỏng vấn tự giữ kết quả, FB3b (gói khám bị hỏi lại mỗi lần), FB7 (kể bị tách hai mã, chưa xác minh), review không tìm được MRI cũ, app chỉ liên kết khi thông tin khớp (CS). Đối chứng: theo lời kể của P1, ở Xanh Pôn chỉ cần CCCD là ra một mã chung cho cả diện cá nhân và doanh nghiệp.
+
+**Giới hạn của bằng chứng:** trường hợp của P1 là hồ sơ không thông giữa các bệnh viện khác nhau, không phải trong Vinmec. Hướng dẫn chính thức của Vinmec nói mỗi khách hàng có một mã y tế và khách cũ không cần đăng ký lại; FB7 có thể do thông tin đăng ký qua công ty không khớp với hồ sơ cá nhân.
+
+**Tình trạng ngày 19/10/2026:** 1 người kể trực tiếp (P1), chưa đạt ngưỡng ít nhất 2 người, và trường hợp đó nằm ngoài Vinmec. Giữ H4 làm hướng chính; H5 là hướng dự phòng có tín hiệu khá hơn trước.
 
 **Điều kiện chuyển sang H5:** sau vòng phỏng vấn tuần 1 với đúng nhóm người dùng, nếu ít nhất 2 người kể một lần cụ thể bị tách hồ sơ hoặc bị hỏi lại, trong khi không ai kể lần lịch bị đổi mà không báo.
 
@@ -86,9 +92,9 @@ Thang điểm 1–3 (3 là tốt nhất cho việc chọn làm tiếp). Điểm 
 | Giá trị với Vinmec | 1 | 1 | 2 | **3**: đúng vào lợi thế "thuận tiện, chắc chắn" | 2 |
 | Khả thi trong sprint, an toàn | 3 | 3 | 1: sát ranh giới lời khuyên y khoa | **2**: làm được trên dữ liệu giả lập; triển khai thật cần tích hợp hệ thống lịch | 1: khớp danh tính là dữ liệu nhạy cảm, khó thử bằng dữ liệu giả |
 | **Tổng** | 7 | 7 | 7 | **14** | 9 |
-| Độ mạnh bằng chứng | Mạnh, nhưng là bằng chứng *phản bác* (4/4 tự xử lý được) | Phản bác (0/3) | Yếu (1/3) | **Trung bình**: 5/8 trường hợp Facebook, 0/4 phỏng vấn | Trung bình |
+| Độ mạnh bằng chứng | Mạnh, nhưng là bằng chứng *phản bác* (4/4 tự xử lý được) | Phản bác (0/4) | Yếu (1/4) | **Trung bình**: 5/8 trường hợp Facebook, chính sách giải thích được cơ chế, 0/4 phỏng vấn | Khá: 1/4 phỏng vấn xác nhận (ngoài Vinmec), 4/4 tự giữ hồ sơ |
 
-**Kết quả sàng lọc:** H4 dẫn đầu ở mọi tiêu chí trừ khả thi, nhưng độ mạnh bằng chứng mới ở mức trung bình. Quyết định giữ nguyên: H4 làm need statement chính, H5 làm dự phòng. Ưu tiên số một của tuần 1 sprint là phỏng vấn đúng nhóm người dùng để nâng độ mạnh bằng chứng của H4.
+**Kết quả sàng lọc:** H4 dẫn đầu ở mọi tiêu chí trừ khả thi, nhưng độ mạnh bằng chứng mới ở mức trung bình. H5 có bằng chứng phỏng vấn tốt hơn H4, nhưng điểm khả thi và an toàn thấp (khớp danh tính là dữ liệu nhạy cảm) và trường hợp xác nhận nằm ngoài Vinmec. Quyết định giữ nguyên: H4 làm need statement chính, H5 làm dự phòng. Ưu tiên số một của tuần 1 sprint là phỏng vấn đúng nhóm người dùng để nâng độ mạnh bằng chứng của H4.
 
 ---
 

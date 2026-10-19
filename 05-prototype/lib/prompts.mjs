@@ -1,4 +1,4 @@
-// Prompt và JSON schema gửi cho Claude. Bản đọc được cho người: ../prompts.md
+// Prompt và JSON schema dùng chung cho Claude và GPT. Bản đọc được cho người: ../prompts.md
 
 export const PROMPT_VERSION = "v1 (19/10/2026)";
 

@@ -1,6 +1,9 @@
 # Prompt đã dùng
 
-- **Mô hình:** `claude-opus-5-5`, effort `low` (việc đơn giản, cần trả lời nhanh), đầu ra JSON theo schema (structured outputs), có `fallbacks: "default"` để yêu cầu bị từ chối được chạy lại trên mô hình dự phòng.
+- **Mô hình:** dùng chung một bộ prompt và schema cho hai nhà cung cấp, chọn bằng file `.env`:
+  - Claude: `claude-opus-5-5`, effort `low` (việc đơn giản, cần trả lời nhanh), đầu ra JSON theo schema (structured outputs), có `fallbacks: "default"` để yêu cầu bị từ chối được chạy lại trên mô hình dự phòng.
+  - GPT: mô hình theo `OPENAI_MODEL` (mặc định `gpt-5`), Chat Completions với `response_format` JSON schema ở chế độ `strict`.
+  - Khi thử với người dùng, ghi rõ trong log đã dùng nhà cung cấp và mô hình nào.
 - **Phiên bản prompt:** v1 (19/10/2026). Nguồn trong code: [lib/prompts.mjs](lib/prompts.mjs). Khi sửa prompt, tăng số phiên bản ở đó và ghi lại ở mục "Lịch sử thay đổi" dưới đây.
 
 ## Nguyên tắc thiết kế

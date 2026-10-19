@@ -1,69 +1,61 @@
-# BRD rút gọn – Prototype "Lịch hẹn của tôi"
+# BRD rút gọn – Sáng kiến "Lịch hẹn của tôi"
 
-Vì sao chỉ làm BRD rút gọn, không làm BRD đầy đủ: xem [PHUONG-PHAP.md, mục 5](../PHUONG-PHAP.md#5-có-cần-brd-không). Các mã H4, FB… được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
+BRD (Business Requirements Document) trả lời **vì sao làm và làm để đạt gì**. Sản phẩm cụ thể cần hành xử thế nào nằm ở [PRD.md](PRD.md). Vì sao chỉ làm bản rút gọn: xem [PHUONG-PHAP.md, mục 5](../PHUONG-PHAP.md#5-brd-và-prd). Các mã H4, FB, CS, BP… được giải thích ở [GIAI-THICH-MA.md](../GIAI-THICH-MA.md).
 
-## 1. Mục tiêu
+## 1. Vấn đề kinh doanh
 
-Kiểm chứng giả thuyết H4 bằng prototype: **nếu thay đổi về bác sĩ, dịch vụ, giờ khám hoặc bước chuẩn bị bắt buộc được báo đến bệnh nhân trước khi rời nhà, bằng lời dễ hiểu và kèm việc cần làm, thì bệnh nhân hiểu đúng và hành động đúng.** Đây là điều kiện cần cho outcome của [need statement](../03-need-statement/need-statement.md): giảm số lần đến viện mà không được khám đúng như đã đặt.
+Sau khi bệnh nhân đặt lịch, kế hoạch khám có thể thay đổi (bác sĩ, dịch vụ, giờ, bước chuẩn bị bắt buộc) mà bệnh nhân chỉ biết khi đã đến viện (H4: 5/8 trường hợp Facebook). Quy trình của Vinmec cho phép tổng đài điều chỉnh giờ khám sau khi đặt, nhưng việc báo lại dựa vào cuộc gọi; trong khi Vinmec cam kết người bệnh được biết bác sĩ chịu trách nhiệm điều trị (CS). Need statement: [03-need-statement](../03-need-statement/need-statement.md).
+
+## 2. Vì sao đáng làm (business case)
+
+| Giá trị | Lập luận | Bằng chứng |
+| --- | --- | --- |
+| Giữ lợi thế cạnh tranh | Người bệnh chọn Vinmec vì thuận tiện và chắc chắn; lịch không được giữ đúng là mất đúng lợi thế đó, có người cân nhắc đổi viện | P2, FB4; TT1 so sánh trực tiếp với Tâm Anh |
+| Giữ đúng cam kết với người bệnh | Quyền được biết bác sĩ điều trị, được thông tin bằng ngôn ngữ dễ hiểu | CS, FB4 |
+| Giảm việc lặp lại cho tổng đài | Người bệnh tự gọi để kiểm tra lịch khi trạng thái lịch nhảy | FB1 |
+| Giảm lượt khám phải hủy hoặc làm lại | Đến nơi không làm được thủ thuật, thiếu bước chuẩn bị bắt buộc | FB2, FB5 |
+| Có tiền lệ ở nơi khác | Tin nhắn lịch gắn với hệ thống lịch giảm 17,2% tỷ lệ bỏ hẹn ở Guy's and St Thomas' | BP1 |
+
+**Chưa có:** số liệu nền của Vinmec (tần suất thay đổi lịch, số cuộc gọi kiểm tra lịch) và chi phí tích hợp. Đây là lý do chưa làm BRD đầy đủ.
+
+## 3. Mục tiêu của bước prototype
+
+Kiểm chứng: **nếu thay đổi về bác sĩ, dịch vụ, giờ khám hoặc bước chuẩn bị bắt buộc được báo đến bệnh nhân trước khi rời nhà, bằng lời dễ hiểu và kèm việc cần làm, thì bệnh nhân hiểu đúng và hành động đúng.** Đây là điều kiện cần cho outcome của need statement.
 
 Prototype **không** chứng minh được vấn đề xảy ra thường xuyên. Việc đó cần phỏng vấn đúng nhóm người dùng và số liệu của Vinmec.
 
-## 2. Phạm vi
+## 4. Phạm vi sáng kiến
 
 | Trong phạm vi | Ngoài phạm vi |
 | --- | --- |
-| Một lượt khám đã đặt trước của phụ nữ mang thai hoặc phụ huynh (dữ liệu giả lập) | Tích hợp hệ thống lịch thật của Vinmec |
-| So sánh "lịch đã đặt" với "lịch hiện tại" để tìm thay đổi | Đặt lịch mới, thanh toán, đặt cọc |
-| Tin nhắn báo thay đổi do AI viết, có nút hành động | Gửi SMS, Zalo, thông báo đẩy thật |
-| Danh sách bước chuẩn bị theo mốc thời gian | Nội dung chuẩn bị do AI tự nghĩ ra |
-| Hỏi đáp về lịch và bước chuẩn bị; chuyển câu hỏi y khoa cho nhân viên | Tư vấn y khoa, giải thích kết quả, chẩn đoán |
-| Màn hình mô phỏng phía bệnh viện để tạo thay đổi khi thử | Quy trình nội bộ của điều phối lịch |
+| Lượt khám đã đặt trước của phụ nữ mang thai, phụ huynh (khám thai theo gói, tiêm chủng, khám nhi) | Người lớn tuổi khám theo bảo hiểm ở viện công; ca khám gấp không đặt trước |
+| Báo thay đổi lịch và bước chuẩn bị, từ sau khi đặt đến ngày khám | Đặt lịch mới, thanh toán, đặt cọc (đã có trên app) |
+| Hỏi đáp về lịch và chuẩn bị; chuyển câu hỏi y khoa cho nhân viên | Tư vấn y khoa, giải thích kết quả, chẩn đoán |
+| | Hồ sơ tách rời giữa các diện khám (H5: hướng dự phòng, cần sáng kiến riêng) |
+| | Thái độ nhân viên, thiếu nhân sự, thời gian chờ thanh toán (vấn đề vận hành) |
 
-## 3. Các bên liên quan
+## 5. Các bên liên quan
 
-Bệnh nhân (người dùng chính), nhân viên điều phối lịch (người tạo thay đổi, được mô phỏng trong prototype), tổng đài (nhận cuộc gọi khi bệnh nhân bấm "gọi tổng đài"), bác sĩ đầu mối (duyệt danh sách từ khóa khẩn cấp và nội dung chuẩn bị). Phân tích đầy đủ ở [need statement, mục 6.1](../03-need-statement/need-statement.md#61-các-bên-liên-quan-cho-h4).
+Bệnh nhân (người dùng chính), nhân viên điều phối lịch (người tạo thay đổi), tổng đài (nhận cuộc gọi khi bệnh nhân bấm "gọi tổng đài"), bác sĩ đầu mối (duyệt danh sách từ khóa khẩn cấp và nội dung chuẩn bị), đội MyVinmec và IT (sở hữu app, dữ liệu lịch), lãnh đạo khoa sản, nhi (quyết định tiếp nhận). Phân tích đầy đủ ở [need statement, mục 6.1](../03-need-statement/need-statement.md#61-các-bên-liên-quan-cho-h4).
 
-## 4. Yêu cầu chức năng
+## 6. Chỉ số thành công
 
-| Mã | Yêu cầu | Nguồn |
-| --- | --- | --- |
-| F1 | Phát hiện thay đổi giữa lịch đã đặt và lịch hiện tại: bác sĩ, dịch vụ, ngày, giờ, phòng, cơ sở, trạng thái xác nhận, bước chuẩn bị thêm mới | FB1–FB5; best practice 1 |
-| F2 | Việc phát hiện thay đổi do code làm (không do AI), để không bao giờ báo sai dữ kiện | Rủi ro R1 |
-| F3 | AI viết tiêu đề, lời nhắn ngắn và danh sách việc cần làm, chỉ dựa trên dữ kiện F1 trả về | Best practice 1, 2 |
-| F4 | Mỗi thông báo có 3 nút: Xác nhận, Chọn lịch khác, Gọi tổng đài | Best practice 1 (tin nhắn để hành động) |
-| F5 | Danh sách bước chuẩn bị có hạn (trước 1 ngày, sáng ngày khám…), đánh dấu được việc đã xong | Best practice 2; FB2, FB5 |
-| F6 | Hỏi đáp: trả lời câu hỏi về lịch và bước chuẩn bị từ dữ liệu của lượt khám | – |
-| F7 | Câu hỏi y khoa: không trả lời nội dung, chuyển cho nhân viên y tế, báo thời hạn phản hồi | Best practice 3; rủi ro R2 |
-| F8 | Dấu hiệu khẩn cấp: kiểm tra bằng từ khóa *trước* khi gọi AI, hiển thị ngay hướng dẫn gọi 115 hoặc đến cấp cứu | 06-rui-ro-dao-duc, mục 2 |
-| F9 | Màn hình mô phỏng phía bệnh viện: sửa lịch hiện tại, thêm bước chuẩn bị, gửi thông báo | Phục vụ thử nghiệm |
-| F10 | Ghi nhật ký phiên thử (kịch bản, nút đã bấm, thời gian đến khi hành động, câu hỏi và cách phân loại) | Phục vụ log thử nghiệm |
+**Của sáng kiến** (khi triển khai thật; chưa có số nền, cần xin dữ liệu Vinmec ở tuần 1 sprint):
 
-## 5. Yêu cầu phi chức năng
+1. Tỷ lệ lượt khám đã đặt mà đến nơi không làm được hoặc phải đổi.
+2. Trong các lượt có thay đổi: tỷ lệ bệnh nhân biết trước khi rời nhà.
+3. Số cuộc gọi tổng đài chỉ để kiểm tra lại lịch đã đặt.
+4. Thời gian chờ thêm do phải xếp lại hàng.
 
-| Mã | Yêu cầu |
-| --- | --- |
-| N1 | Chỉ dùng dữ liệu tự mô phỏng; không nhập dữ liệu thật của người bệnh |
-| N2 | Khóa API chỉ nằm ở máy chủ cục bộ, không đưa xuống trình duyệt |
-| N3 | Chạy được khi không có khóa API (chế độ mẫu không AI), để vẫn thử được và để so sánh |
-| N4 | Tiếng Việt, xưng hô lịch sự, câu ngắn; đọc được trên màn hình điện thoại |
-| N5 | Ghi rõ trên giao diện: đây là prototype bài tập, không phải ứng dụng chính thức của Vinmec |
-
-## 6. Chỉ số thành công khi thử với người dùng
-
-| Chỉ số | Cách đo | Mục tiêu đặt trước |
-| --- | --- | --- |
-| Hiểu đúng thay đổi | Sau khi đọc thông báo, người thử nói lại thay đổi là gì; so với dữ kiện | Ít nhất 2/3 người thử hiểu đúng ở mọi kịch bản |
-| Thời gian đến khi hành động | Đồng hồ trong prototype, từ lúc thông báo hiện đến lúc bấm nút | Dưới 60 giây |
-| Hành động đúng | Nút được bấm phù hợp với tình huống (ví dụ: đổi dịch vụ thì chọn lịch khác hoặc gọi tổng đài) | Ít nhất 2/3 |
-| An toàn | Câu hỏi y khoa và câu khẩn cấp được chuyển đúng | 100% trong các câu thử |
-| Mức hài lòng | Người thử tự chấm 1–5 | Trung bình ≥ 4 |
+**Của bước prototype** (thử với 2–3 người dùng): hiểu đúng thay đổi ≥ 2/3; thời gian đến khi hành động < 60 giây; hành động đúng ≥ 2/3; câu y khoa và khẩn cấp được chuyển đúng 100%; mức hài lòng ≥ 4/5. Cách đo chi tiết: [PRD.md, mục 6](PRD.md#6-tiêu-chí-chấp-nhận-khi-thử-với-người-dùng).
 
 ## 7. Giả định và ràng buộc
 
-- Giả định: mọi thay đổi về lịch đều được nhân viên ghi vào hệ thống. Nếu không, không công cụ nào báo được (bài học từ DrDoctor). Đây là giả định lớn nhất, cần kiểm chứng với điều phối lịch ở tuần 1 sprint.
+- **Giả định lớn nhất:** mọi thay đổi về lịch đều được nhân viên ghi vào hệ thống. Nếu không, không công cụ nào báo được (BP1). Cần kiểm chứng với điều phối lịch ở tuần 1 sprint.
 - Giả định: bệnh nhân đọc thông báo trong app. Kênh Zalo hoặc SMS chưa được kiểm chứng.
-- Ràng buộc: thời gian 1 tuần; không có quyền truy cập hệ thống Vinmec; người thử là người quen, không phải bệnh nhân Vinmec.
+- Ràng buộc từ chính sách Vinmec: phải báo cho người dùng khi dữ liệu được xử lý tự động và cho phép từ chối; không chia sẻ thông tin sức khỏe khi chưa có đồng ý; không chẩn đoán ([04-chinh-sach-vinmec.md, mục 3](../01-phong-van/04-chinh-sach-vinmec.md#3-ràng-buộc-cho-giải-pháp-ai-rút-ra-từ-chính-sách)).
+- Ràng buộc của bài tập: 1 tuần; không có quyền truy cập hệ thống Vinmec; chỉ dữ liệu giả lập; người thử là người quen, không phải bệnh nhân Vinmec.
 
 ---
 
-*Phần do AI hỗ trợ: Claude soạn bản nháp từ need statement, best practice và phần rủi ro; người làm duyệt phạm vi và chỉ số.*
+*Phần do AI hỗ trợ: Claude soạn bản nháp từ need statement, chính sách Vinmec, best practice và phần rủi ro; người làm duyệt phạm vi và chỉ số.*

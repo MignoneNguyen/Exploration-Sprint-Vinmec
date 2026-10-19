@@ -1,6 +1,6 @@
 # Giải thích các mã dùng trong repo
 
-Các file trong repo dùng mã ngắn cho giả thuyết (H1–H5) và cho nguồn bằng chứng (FB, TT, AS, W, P). File này giải thích từng mã.
+Các file trong repo dùng mã ngắn cho giả thuyết (H1–H5) và cho nguồn bằng chứng (FB, TT, AS, W, P, CS, BP). File này giải thích từng mã.
 
 ## 1. Giả thuyết về điểm đau (H1–H5)
 
@@ -9,10 +9,10 @@ Mỗi giả thuyết là một phỏng đoán về điểm đau của người b
 | Mã | Giả thuyết | Thuộc giai đoạn | Trạng thái |
 | --- | --- | --- | --- |
 | **H1** | Bệnh nhân **không biết nên đặt chuyên khoa hay bác sĩ nào** khi đặt lịch. | Trước khi đặt lịch | **Đã loại.** MyVinmec đã có trợ lý MIA và đặt lịch theo triệu chứng; 4/4 người phỏng vấn tự xử lý được (bảng chỉ dẫn, tự tìm trên mạng, quen khám nội, AI ở sảnh). |
-| **H2** | Bệnh nhân **không biết khi nào có kết quả** xét nghiệm, chụp chiếu và xem ở đâu. | Nhận kết quả | **Không ủng hộ** (0/3 người được hỏi): được gọi/nhắn, biết khoảng 2 giờ, hoặc giờ ước tính in trên phiếu. |
-| **H3** | Bệnh nhân **không hiểu kết quả** khi cầm trên tay. | Nhận kết quả | **Yếu** (1/3): hai người hiểu nhờ cột ngưỡng trên phiếu và bác sĩ giải thích. |
-| **H4** | Sau khi đặt lịch, bệnh nhân **không biết kế hoạch khám đã thay đổi** (đổi bác sĩ, đổi dịch vụ, đổi giờ, thủ thuật không làm được, còn thiếu bước chuẩn bị bắt buộc) **cho đến khi đến viện**. Hệ quả: đi lại vô ích, xếp hàng lại, mất niềm tin. | Từ sau khi đặt lịch đến ngày khám | **Giả thuyết chính, còn mở.** Có 5/8 trường hợp Facebook ủng hộ, nhưng 0/4 người phỏng vấn xác nhận vì không ai thuộc đúng nhóm người dùng. Là nền của [need statement chính](03-need-statement/need-statement.md). |
-| **H5** | Hệ thống **không nhận ra cùng một bệnh nhân** qua các lần khám hoặc các diện khám (gói khám, công ty, cá nhân), nên bệnh nhân bị hỏi lại thông tin và hồ sơ bị tách rời. | Khai thông tin, liên kết hồ sơ; các lần khám sau | **Hướng dự phòng, tín hiệu trung bình.** Có FB3b, FB7, review App Store và lần tự dùng app; 3/3 người được hỏi tự giữ hồ sơ giấy. Là nền của need statement dự phòng. |
+| **H2** | Bệnh nhân **không biết khi nào có kết quả** xét nghiệm, chụp chiếu và xem ở đâu. | Nhận kết quả | **Không ủng hộ** (0/4): được gọi/nhắn, biết khoảng 2 giờ, giờ ước tính in trên phiếu, hoặc kết quả lên app sáng hôm sau. |
+| **H3** | Bệnh nhân **không hiểu kết quả** khi cầm trên tay. | Nhận kết quả | **Yếu** (1/4): ba người tự đọc được, nhờ cột ngưỡng trên phiếu và bác sĩ giải thích. |
+| **H4** | Sau khi đặt lịch, bệnh nhân **không biết kế hoạch khám đã thay đổi** (đổi bác sĩ, đổi dịch vụ, đổi giờ, thủ thuật không làm được, còn thiếu bước chuẩn bị bắt buộc) **cho đến khi đến viện**. Hệ quả: đi lại vô ích, xếp hàng lại, mất niềm tin. | Từ sau khi đặt lịch đến ngày khám | **Giả thuyết chính, còn mở.** Có 5/8 trường hợp Facebook ủng hộ và chính sách của Vinmec giải thích được cơ chế (tổng đài được phép điều chỉnh giờ khám, thông báo lại dựa vào cuộc gọi), nhưng 0/4 người phỏng vấn xác nhận vì không ai thuộc đúng nhóm người dùng. Là nền của [need statement chính](03-need-statement/need-statement.md). |
+| **H5** | Hệ thống **không nhận ra cùng một bệnh nhân** qua các lần khám hoặc các diện khám (gói khám, công ty, cá nhân), nên bệnh nhân bị hỏi lại thông tin và hồ sơ bị tách rời. | Khai thông tin, liên kết hồ sơ; các lần khám sau | **Hướng dự phòng, tín hiệu khá.** Giả thuyết duy nhất có người phỏng vấn xác nhận trực tiếp: P1 khám định kỳ theo công ty mỗi năm một nơi, hồ sơ không đồng bộ (nhưng là giữa các bệnh viện, không phải trong Vinmec). Thêm FB3b, FB7 (chưa xác minh), review App Store, lần tự dùng app; 4/4 người tự giữ hồ sơ. Là nền của need statement dự phòng. |
 
 **Tiêu chí xác nhận một giả thuyết:** có ít nhất 2 người *thuộc đúng nhóm người dùng* kể lại một lần cụ thể đã xảy ra. Bài đăng mạng xã hội và review chỉ dùng để đặt giả thuyết, không đủ để xác nhận.
 
@@ -21,10 +21,12 @@ Mỗi giả thuyết là một phỏng đoán về điểm đau của người b
 | Mã | Nguồn | Chi tiết |
 | --- | --- | --- |
 | **P1–P4** | Người được phỏng vấn (ẩn danh), 17–18/10/2026 | [01-phong-van/survey-logs/P1.md](01-phong-van/survey-logs/P1.md) … [P4.md](01-phong-van/survey-logs/P4.md) |
-| **FB1–FB7** | Bài đăng Facebook về Vinmec (nhóm review và trang cá nhân), quanh ngày 17/10/2026. Bài FB3 nêu hai vấn đề nên tách thành **FB3a** (siêu âm 4D bị xếp hàng 2D) và **FB3b** (gói khám bị hỏi lại) | [01-phong-van/01-desk-research.md](01-phong-van/01-desk-research.md) |
+| **FB1–FB7** | Trường hợp kể trong 4 bài đăng Facebook về Vinmec (1 bài trong nhóm review sinh con tại Vinmec, 3 bài khác), xem ngày 17/10/2026. Trường hợp FB3 nêu hai vấn đề nên tách thành **FB3a** (siêu âm 4D bị xếp hàng 2D) và **FB3b** (gói khám bị hỏi lại) | [01-phong-van/01-desk-research.md](01-phong-van/01-desk-research.md) |
 | **TT1–TT5** | Video TikTok review Vinmec (TT2 chưa ghi chép) | [01-phong-van/01-desk-research.md](01-phong-van/01-desk-research.md) |
 | **AS** | Review MyVinmec trên App Store (11 review gần nhất) | [01-phong-van/01-desk-research.md](01-phong-van/01-desk-research.md) |
 | **W** | Lần tự dùng thử MyVinmec (walkthrough), 18/10/2026 | [01-phong-van/00-myvinmec-walkthrough.md](01-phong-van/00-myvinmec-walkthrough.md) |
+| **CS** | Chính sách và hướng dẫn chính thức của Vinmec (quyền người bệnh, bảo vệ dữ liệu, đặt lịch, hồ sơ), truy cập 19/10/2026 | [01-phong-van/04-chinh-sach-vinmec.md](01-phong-van/04-chinh-sach-vinmec.md) |
+| **BP1–BP3** | Best practice quốc tế: BP1 DrDoctor (lịch hẹn), BP2 hướng dẫn chuẩn bị trước nội soi, BP3 trợ lý AI Dora | [04-best-practice/best-practice.md](04-best-practice/best-practice.md) |
 
 ## 3. Mã câu hỏi phỏng vấn
 
@@ -44,7 +46,12 @@ Dấu ★ đánh dấu câu ưu tiên, hỏi kể cả khi thiếu thời gian. 
 | --- | --- |
 | Need statement | Câu mô tả nhu cầu theo mẫu Biodesign: vấn đề – nhóm người dùng – kết quả mong muốn, không nêu giải pháp |
 | Desk research | Nghiên cứu từ nguồn có sẵn (review, mạng xã hội, tài liệu), không tiếp xúc trực tiếp người dùng |
+| BRD (Business Requirements Document) | Tài liệu yêu cầu nghiệp vụ: vì sao làm, mục tiêu, phạm vi, các bên liên quan, chỉ số thành công |
+| PRD (Product Requirements Document) | Tài liệu yêu cầu sản phẩm: sản phẩm cần làm gì, hành vi cụ thể, yêu cầu chức năng, phi chức năng, tiêu chí chấp nhận. Đi sau BRD |
+| PID | Mã y tế của khách hàng Vinmec, in trên tem hồ sơ và phiếu khám |
 | Workaround | Cách người dùng tự xoay xở khi gặp vướng mắc |
 | MIA | Trợ lý AI trong app MyVinmec (tên theo giao diện app ngày 18/10/2026) |
 | DNA (did not attend) | Bệnh nhân không đến buổi khám đã hẹn; chỉ số dùng trong các nghiên cứu ở NHS (Anh) |
 | My visits | Mục xem lịch khám đã đặt trong MyVinmec |
+| M | Ngày Vinmec chốt bài toán cho nhóm (khoa giao đề hoặc chọn bài ở Cổng 1). Chưa được công bố; các mốc sau M trong [kế hoạch coach](07-coach-plan/README.md) trượt theo M |
+| Chế độ mẫu | Prototype chạy không có AI, dùng tin nhắn và câu trả lời viết sẵn. Dùng khi không có khóa API, khi AI lỗi, hoặc để so sánh với chế độ AI |

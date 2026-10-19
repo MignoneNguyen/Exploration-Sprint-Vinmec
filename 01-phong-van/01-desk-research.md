@@ -21,7 +21,7 @@ App có điểm 4,9/5 trên khoảng 16 nghìn lượt đánh giá ở App Store
 
 ## 2. Facebook
 
-Từ nhóm review Vinmec và bài đăng cá nhân, đăng trong 1–2 ngày trước 17/10/2026. Có 7 bài đăng; bài FB3 nêu hai vấn đề riêng nên tách thành FB3a và FB3b, tổng cộng 8 trường hợp.
+Từ 4 bài đăng (1 bài trong nhóm review sinh con tại Vinmec, 3 bài khác), đăng trong 1–2 ngày trước 17/10/2026, xem ngày 17/10/2026. Một bài có thể kể nhiều trường hợp; mỗi trường hợp được đặt một mã FB1–FB7. Trường hợp FB3 nêu hai vấn đề riêng nên tách thành FB3a và FB3b, tổng cộng 8 trường hợp. Không lưu link để bảo vệ người đăng.
 
 | Mã | Đã đặt / mong đợi | Thực tế xảy ra | Cách xoay xở | Giả thuyết |
 | --- | --- | --- | --- | --- |
@@ -32,15 +32,17 @@ Từ nhóm review Vinmec và bài đăng cá nhân, đăng trong 1–2 ngày tr�
 | FB4 | Đặt bác sĩ quen trước 2 tuần | Bị chuyển sang bác sĩ khác, không báo trước | Cân nhắc chuyển nơi khác | H4 |
 | FB5 | Chuẩn bị nhập viện theo hướng dẫn | Thiếu một bước khám bắt buộc, hôm sau mới được gọi báo | Phải quay lại viện dù đang mệt | H4 |
 | FB6 | Khám xong là về | Chờ thanh toán và lấy thuốc lâu hơn thời gian khám | Chịu đựng | Vận hành |
-| FB7 | Khám theo diện công ty và diện cá nhân tại cùng viện | Hai hồ sơ với hai mã riêng, không gộp; thời gian khám lâu | Chưa rõ, cần hỏi trong phỏng vấn | H5 |
+| FB7 | Khám theo diện công ty và diện cá nhân tại cùng viện | Hai hồ sơ với hai mã riêng, không gộp; thời gian khám lâu (theo lời kể, chưa xác minh với Vinmec) | Chưa rõ, cần hỏi trong phỏng vấn | H5 |
 
 **5/8 trường hợp** (FB1, FB2, FB3a, FB4, FB5) có cùng một mẫu: kế hoạch khám thay đổi mà bệnh nhân không được báo trước. FB3b và FB7 cho thấy mẫu thứ hai: hệ thống không nhận ra đó là cùng một bệnh nhân.
 
 **Thiên lệch:** nguồn này thiên về phàn nàn, và các trường hợp tìm được chủ yếu từ khoa sản và nhi.
 
+**Về FB7:** hướng dẫn chính thức của Vinmec nói mỗi khách hàng có một mã y tế và khách cũ không cần đăng ký lại ([04-chinh-sach-vinmec.md](04-chinh-sach-vinmec.md)). FB7 có thể do thông tin đăng ký qua công ty không khớp với hồ sơ cá nhân. Cần hỏi thêm trước khi dùng làm luận điểm.
+
 ## 3. TikTok
 
-5 video review Vinmec, đa số về sinh con và khám nhi. Video TT2 chưa ghi chép.
+5 video review Vinmec, xem ngày 18/10/2026, đa số về sinh con và khám nhi. Video TT2 chưa ghi chép.
 
 | Mã | Nội dung chính | Liên quan |
 | --- | --- | --- |

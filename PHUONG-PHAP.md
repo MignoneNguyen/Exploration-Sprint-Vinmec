@@ -17,7 +17,7 @@ Quy trình Biodesign có ba giai đoạn. Bài tập 1 tuần nằm gần hết 
 
 | Giai đoạn Biodesign | Bước | Trong bài này |
 | --- | --- | --- |
-| **Identify** | Needs finding: quan sát, phỏng vấn, xác định vấn đề | [01-phong-van](01-phong-van/): tự dùng app, desk research, 4 cuộc phỏng vấn; [02-journey-map](02-journey-map/) |
+| **Identify** | Needs finding: quan sát, phỏng vấn, xác định vấn đề | [01-phong-van](01-phong-van/): tự dùng app, desk research, chính sách Vinmec, 4 cuộc phỏng vấn; [02-journey-map](02-journey-map/) |
 | | Need statement: vấn đề – nhóm người dùng – kết quả mong muốn, không nêu giải pháp | [03-need-statement](03-need-statement/need-statement.md) |
 | | Needs screening: hiểu sâu bối cảnh, giải pháp hiện có, các bên liên quan, giá trị | [03-need-statement, mục Sàng lọc](03-need-statement/need-statement.md#6-sàng-lọc-nhu-cầu-needs-screening); [04-best-practice](04-best-practice/best-practice.md) (giải pháp hiện có trên thế giới) |
 | **Invent** | Tạo và sàng lọc ý tưởng, làm prototype | [05-prototype](05-prototype/) |
@@ -31,13 +31,13 @@ Quy trình Biodesign có ba giai đoạn. Bài tập 1 tuần nằm gần hết 
 
 ## 2. SDLC
 
-Sprint 6 tuần không hợp với mô hình thác nước (waterfall), vì nhu cầu chưa được xác nhận và sẽ thay đổi sau mỗi vòng thử. Mô hình phù hợp là **lặp (iterative/Agile) có cổng duyệt (stage-gate)**: mỗi tuần một vòng ngắn, và các cổng của Vinmec (Cổng 1, rà soát giữa kỳ, Cổng 2, Demo Day) là điểm quyết định đi tiếp, gộp hay dừng.
+Sprint 6 tuần không hợp với mô hình thác nước (waterfall), vì nhu cầu chưa được xác nhận và sẽ thay đổi sau mỗi vòng thử. Mô hình phù hợp là **lặp (iterative/Agile) có cổng duyệt (stage-gate)**: mỗi tuần một vòng ngắn, và các cổng của Vinmec (Cổng 1, rà soát giữa kỳ, Cổng 2, Demo Day) là điểm quyết định đi tiếp, gộp hay dừng. Mô hình lặp cũng chịu được việc chưa biết ngày Vinmec chốt bài toán: vòng tìm nhu cầu chạy ngay, các vòng sau tính từ ngày chốt.
 
 | Pha SDLC | Trong bài này | Sản phẩm |
 | --- | --- | --- |
 | Lập kế hoạch | Chọn khoảnh khắc Đặt lịch; chia thời gian 1 tuần | [README](README.md) |
 | Phân tích yêu cầu | Phỏng vấn, journey map hiện trạng (as-is), need statement | Phần 1–3 |
-| Thiết kế | Chọn hướng prototype từ bài học best practice; BRD rút gọn | [04-best-practice](04-best-practice/best-practice.md), [05-prototype/BRD-lite.md](05-prototype/BRD-lite.md) |
+| Thiết kế | Chọn hướng prototype từ bài học best practice; BRD rút gọn rồi PRD | [04-best-practice](04-best-practice/best-practice.md), [05-prototype/BRD-lite.md](05-prototype/BRD-lite.md), [05-prototype/PRD.md](05-prototype/PRD.md) |
 | Xây dựng | Prototype trên dữ liệu giả lập | [05-prototype](05-prototype/) |
 | Kiểm thử | Thử với 2–3 người dùng, ghi log, sửa | [05-prototype/test-log.md](05-prototype/test-log.md) |
 | Triển khai, bảo trì | Ngoài phạm vi bài tập (cần tích hợp hệ thống lịch thật của Vinmec) | – |
@@ -56,27 +56,35 @@ PMBOK bản 6 chia quản lý dự án thành 10 lĩnh vực kiến thức. (B�
 | 6. Nguồn lực (Resource) | Người phỏng vấn tự làm; AI (Claude) hỗ trợ soạn và đối chiếu, ghi rõ ở từng file |
 | 7. Truyền thông (Communications) | Repo theo cấu trúc đề; slide 10 trang cho buổi trình bày |
 | 8. Rủi ro (Risk) | Rủi ro của bằng chứng (nguồn thiên lệch, tuyển sai nhóm) ở [mục Hạn chế](01-phong-van/03-tong-hop-insight.md#6-hạn-chế); rủi ro của giải pháp ở [06](06-rui-ro-dao-duc/) |
-| 9. Mua sắm (Procurement) | Không áp dụng trong bài tập. Trong sprint: tích hợp với hệ thống lịch, nhà cung cấp kênh tin nhắn (Zalo, SMS) |
-| 10. Các bên liên quan (Stakeholder) | Phân tích các bên liên quan ở [mục Sàng lọc nhu cầu](03-need-statement/need-statement.md#6-sàng-lọc-nhu-cầu-needs-screening) |
+| 9. Mua sắm (Procurement) | Trong bài tập: prototype không khóa vào một nhà cung cấp AI, chạy được với Claude (Anthropic) hoặc GPT (OpenAI) qua file `.env`, cùng prompt và schema. Trong sprint: chọn nhà cung cấp AI theo quy định dữ liệu của Vinmec; tích hợp với hệ thống lịch, nhà cung cấp kênh tin nhắn (Zalo, SMS) |
+| 10. Các bên liên quan (Stakeholder) | Phân tích các bên liên quan ở [mục Sàng lọc nhu cầu](03-need-statement/need-statement.md#6-sàng-lọc-nhu-cầu-needs-screening); đối chiếu cam kết của Vinmec với người bệnh ở [04-chinh-sach-vinmec.md](01-phong-van/04-chinh-sach-vinmec.md) |
 
 ## 4. Quản lý thay đổi
 
 Dùng theo hai nghĩa:
 
-1. **Kiểm soát thay đổi trong dự án:** khi bằng chứng đổi, hướng đi đổi theo nhưng phải ghi lại. Ví dụ trong bài: H1 bị loại sau khi thấy MyVinmec đã có MIA và 4/4 người tự chọn được khoa; outcome của need statement được sửa và có ghi lý do; need statement dự phòng H5 có sẵn điều kiện chuyển hướng rõ ràng.
+1. **Kiểm soát thay đổi trong dự án:** khi bằng chứng đổi, hướng đi đổi theo nhưng phải ghi lại. Ví dụ trong bài: H1 bị loại sau khi thấy MyVinmec đã có MIA và 4/4 người tự chọn được khoa; outcome của need statement được sửa và có ghi lý do; need statement dự phòng H5 có sẵn điều kiện chuyển hướng rõ ràng. Trong kế hoạch coach: Vinmec chưa công bố ngày chốt bài toán (M), nên các mốc sau M trượt theo M, Demo Day giữ nguyên, và có sẵn cách xử lý khi M đến sớm, muộn hoặc khoa giao đề khác hướng ([07-coach-plan, mục 1.1](07-coach-plan/README.md#11-khi-chưa-biết-lúc-nào-vinmec-chốt-bài-toán)).
 2. **Đưa thay đổi vào tổ chức** (tuần 6, "khoa tiếp nhận giải pháp"): một giải pháp báo thay đổi lịch chỉ chạy được khi nhân viên điều phối ghi mọi thay đổi vào hệ thống (bài học từ DrDoctor). Mô hình ADKAR gợi ý trình tự: nhân viên hiểu vì sao cần ghi (Awareness), muốn làm (Desire), biết cách (Knowledge), làm được trong ca trực (Ability), được duy trì bằng chỉ số theo dõi (Reinforcement).
 
-## 5. Có cần BRD không?
+## 5. BRD và PRD
 
-**Đề bài không yêu cầu BRD.** Kết luận: **không làm BRD đầy đủ, nhưng làm một BRD rút gọn cho prototype.**
+**Đề bài không yêu cầu BRD hay PRD.** Bài làm dùng cả hai, theo thứ tự: BRD định nghĩa sáng kiến (vì sao làm, làm để đạt gì), PRD chuyển ý định đó thành hành vi cụ thể của sản phẩm.
 
-| | BRD đầy đủ | BRD rút gọn (đã làm) |
+| | BRD rút gọn | PRD |
 | --- | --- | --- |
-| Nội dung | Business case, chi phí, lợi ích tài chính, yêu cầu chi tiết, kế hoạch triển khai | Mục tiêu, phạm vi trong/ngoài, các bên liên quan, yêu cầu chức năng và phi chức năng, chỉ số thành công, giả định và ràng buộc |
-| Phù hợp khi | Nhu cầu đã được xác nhận, có số liệu nền và chi phí | Cần chốt prototype làm gì và không làm gì trước khi xây |
-| Lý do | Chưa phù hợp: H4 chưa được phỏng vấn xác nhận, chưa có số liệu nền của Vinmec, chưa biết chi phí tích hợp | Là cầu nối giữa need statement (phân tích yêu cầu) và prototype (thiết kế, xây dựng) trong SDLC; giúp người thử và mentor biết prototype kiểm chứng điều gì |
+| Trả lời | Vì sao làm, cho ai, đạt gì, đo bằng gì | Sản phẩm phải làm gì, hành xử thế nào, khi nào là đạt |
+| Nội dung | Vấn đề kinh doanh, business case, mục tiêu của bước prototype, phạm vi sáng kiến, các bên liên quan, chỉ số thành công, giả định và ràng buộc | Người dùng và tình huống, luồng chính, yêu cầu chức năng (F1–F11) và phi chức năng (N1–N7) kèm tiêu chí chấp nhận, hành vi của AI, tiêu chí chấp nhận khi thử |
+| File | [05-prototype/BRD-lite.md](05-prototype/BRD-lite.md) | [05-prototype/PRD.md](05-prototype/PRD.md) |
 
-BRD rút gọn: [05-prototype/BRD-lite.md](05-prototype/BRD-lite.md). Một BRD đầy đủ nên làm ở tuần 5–6 của sprint, khi đã có kết quả 2 vòng thử người dùng và số liệu nền từ Vinmec.
+**Vì sao BRD chỉ là bản rút gọn:** H4 chưa được phỏng vấn xác nhận, chưa có số liệu nền của Vinmec, chưa biết chi phí tích hợp, nên chưa thể làm phần chi phí và lợi ích tài chính. Một BRD đầy đủ nên làm ở tuần 5–6 của sprint, khi đã có kết quả 2 vòng thử người dùng và số liệu nền từ Vinmec.
+
+**Chính sách của Vinmec đi vào đâu:** ràng buộc rút ra từ chính sách ([01-phong-van/04-chinh-sach-vinmec.md](01-phong-van/04-chinh-sach-vinmec.md)) nằm ở phần ràng buộc của BRD và thành yêu cầu cụ thể trong PRD, ví dụ F11 (người dùng được tắt AI) và N7 (không chia sẻ thông tin khi chưa có đồng ý).
+
+## 6. Tài liệu tham khảo về phương pháp
+
+- [10 Knowledge Areas của PMP áp dụng trong dự án IT](https://khoingo.edu.vn/pmp-in-it/fundamentals-it/10-knowledge-areas-pmp-du-an-it/) – Khôi Ngô Edu
+- Slide khóa học: AI Product Thinking & Requirements (Day 05); Xác định bài toán kinh doanh cho AI (Day 02); Human-Centered AI Design; AI Ethics, Responsible AI & Compliance
+- Rob Fitzpatrick, *The Mom Test*
 
 ---
 

@@ -23,7 +23,9 @@ const PORT = Number(process.env.PORT ?? 3000);
 function chonNhaCungCap() {
   if (process.argv.includes("--offline")) return null;
   const chiDinh = (process.env.AI_PROVIDER ?? "").trim().toLowerCase();
-  if (chiDinh === "anthropic" || chiDinh === "openai") return chiDinh;
+  if (chiDinh === "anthropic" && process.env.ANTHROPIC_API_KEY) return "anthropic";
+  if (chiDinh === "openai" && process.env.OPENAI_API_KEY) return "openai";
+  if (chiDinh) console.warn(`AI_PROVIDER=${chiDinh} nhưng thiếu khóa API tương ứng; tự chọn theo khóa đang có.`);
   if (process.env.ANTHROPIC_API_KEY) return "anthropic";
   if (process.env.OPENAI_API_KEY) return "openai";
   return null;
@@ -104,10 +106,21 @@ async function ghiNhatKy(banGhi) {
   await appendFile(path.join(dir, `phien-${ngay}.jsonl`), JSON.stringify({ luc: new Date().toISOString(), ...banGhi }) + "\n");
 }
 
-async function thongBao({ lich_da_dat, lich_hien_tai, da_xong = [], ly_do = "" }) {
+// Ghi vào nhật ký ai đã viết câu trả lời: nhà cung cấp, mô hình thật sự trả lời (có thể là mô hình dự phòng), prompt.
+function nguonAI(kq) {
+  if (kq.che_do !== "ai") return { che_do: kq.che_do, ghi_chu: kq.ghi_chu };
+  return { che_do: "ai", nha_cung_cap: PROVIDER, model: kq.model, prompt: PROMPT_VERSION };
+}
+
+// Chính sách bảo vệ dữ liệu của Vinmec: người dùng được từ chối xử lý tự động bằng AI.
+// dung_ai = false thì không gửi gì cho nhà cung cấp AI, chỉ dùng câu chữ viết sẵn.
+const GHI_CHU_TAT_AI = "Người dùng đã tắt AI, hiển thị nội dung viết sẵn";
+
+async function thongBao({ lich_da_dat, lich_hien_tai, da_xong = [], ly_do = "", dung_ai = true }) {
   const ketQua = soLich(lich_da_dat, lich_hien_tai, da_xong);
   const mau = tinNhanKhongAI(ketQua, ly_do);
   if (OFFLINE) return { ...ketQua, tin_nhan: mau, che_do: "mau" };
+  if (dung_ai === false) return { ...ketQua, tin_nhan: mau, che_do: "mau", ghi_chu: GHI_CHU_TAT_AI };
 
   const noiDung = JSON.stringify({ lich_hien_tai, ket_qua_so_sanh: ketQua, ly_do_thay_doi: ly_do || null });
   const ai = await goiAI(SYSTEM_THONG_BAO, SCHEMA_THONG_BAO, noiDung);
@@ -115,10 +128,11 @@ async function thongBao({ lich_da_dat, lich_hien_tai, da_xong = [], ly_do = "" }
   return { ...ketQua, tin_nhan: mau, che_do: "mau", ghi_chu: `Không dùng được AI (${ai.loi}), hiển thị tin nhắn mẫu` };
 }
 
-async function hoiDap({ cau_hoi, lich_hien_tai }) {
+async function hoiDap({ cau_hoi, lich_hien_tai, dung_ai = true }) {
   // Lớp an toàn chạy trước AI: dấu hiệu khẩn cấp không bao giờ được gửi cho AI xử lý.
   if (laKhanCap(cau_hoi)) return { ...TRA_LOI_KHAN_CAP, che_do: "quy_tac_an_toan" };
   if (OFFLINE) return { ...traLoiKhongAI(cau_hoi, lich_hien_tai), che_do: "mau" };
+  if (dung_ai === false) return { ...traLoiKhongAI(cau_hoi, lich_hien_tai), che_do: "mau", ghi_chu: GHI_CHU_TAT_AI };
 
   const noiDung = JSON.stringify({ luot_kham: lich_hien_tai, cau_hoi });
   const ai = await goiAI(SYSTEM_HOI_DAP, SCHEMA_HOI_DAP, noiDung);
@@ -157,18 +171,18 @@ const server = http.createServer(async (req, res) => {
       return res.end(await readFile(path.join(here, file)));
     }
     if (req.method === "GET" && url.pathname === "/api/che-do") {
-      return guiJson(res, 200, { che_do: OFFLINE ? "mau" : "ai", model: OFFLINE ? null : MODEL, prompt: PROMPT_VERSION });
+      return guiJson(res, 200, { che_do: OFFLINE ? "mau" : "ai", nha_cung_cap: PROVIDER, model: OFFLINE ? null : MODEL, prompt: PROMPT_VERSION });
     }
     if (req.method === "POST" && url.pathname === "/api/thong-bao") {
       const body = await docBody(req);
       const kq = await thongBao(body);
-      await ghiNhatKy({ loai: "thong_bao", kich_ban: body.kich_ban, muc_do: kq.muc_do, che_do: kq.che_do, tin_nhan: kq.tin_nhan });
+      await ghiNhatKy({ loai: "thong_bao", kich_ban: body.kich_ban, muc_do: kq.muc_do, ...nguonAI(kq), tin_nhan: kq.tin_nhan });
       return guiJson(res, 200, kq);
     }
     if (req.method === "POST" && url.pathname === "/api/hoi-dap") {
       const body = await docBody(req);
       const kq = await hoiDap(body);
-      await ghiNhatKy({ loai: "hoi_dap", kich_ban: body.kich_ban, cau_hoi: body.cau_hoi, phan_loai: kq.phan_loai, che_do: kq.che_do });
+      await ghiNhatKy({ loai: "hoi_dap", kich_ban: body.kich_ban, cau_hoi: body.cau_hoi, phan_loai: kq.phan_loai, ...nguonAI(kq) });
       return guiJson(res, 200, kq);
     }
     if (req.method === "POST" && url.pathname === "/api/su-kien") {
@@ -185,5 +199,5 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Prototype đang chạy: http://localhost:${PORT}`);
-  console.log(OFFLINE ? "Chế độ: MẪU (không AI)" : `Chế độ: AI (${MODEL}), prompt ${PROMPT_VERSION}`);
+  console.log(OFFLINE ? "Chế độ: MẪU (không AI)" : `Chế độ: AI (${PROVIDER}, ${MODEL}), prompt ${PROMPT_VERSION}`);
 });

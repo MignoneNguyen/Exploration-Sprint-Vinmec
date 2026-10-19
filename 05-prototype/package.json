@@ -10,9 +10,10 @@
     "test": "node --test tests/core.test.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "0.135.0"
+    "@anthropic-ai/sdk": "0.135.0",
+    "openai": "7.39.0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.12"
   }
 }

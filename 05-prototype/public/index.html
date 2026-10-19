@@ -64,6 +64,10 @@ ul.todo{margin:6px 0 0;padding-left:20px}
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 10px;font-size:13px;cursor:pointer;min-height:36px}
 .ask{display:flex;gap:8px}
 .ask input{flex:1;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.ai-consent{font-size:13px;color:var(--ink-2);background:#F1F4F2;border-radius:10px;padding:8px 12px}
+.ai-consent label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.ai-consent input{width:18px;height:18px}
+.ai-consent summary{cursor:pointer;color:var(--teal);margin-top:4px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;display:none;max-width:90vw}
 .staff{display:flex;flex-direction:column;gap:16px}
 .staff h2{margin:0;font-size:16px}
@@ -93,6 +97,10 @@ pre.facts{background:#1C2321;color:#E6ECEA;border-radius:10px;padding:12px;font-
 <main class="layout">
   <section class="phone" aria-label="Màn hình bệnh nhân">
     <div class="phone-head"><b>Lịch hẹn của tôi</b><span class="disclaimer" id="patientName"></span></div>
+    <div class="ai-consent">
+      <label><input type="checkbox" id="dungAI" checked> Cho phép dùng AI soạn thông báo và trả lời câu hỏi</label>
+      <details><summary>AI làm gì với lịch của tôi?</summary>Hệ thống của bệnh viện so lịch bạn đã đặt với lịch hiện tại. AI chỉ viết lại thay đổi đó thành lời dễ đọc và trả lời câu hỏi về lịch, bước chuẩn bị; AI không chẩn đoán, không tư vấn y khoa. Tắt ô trên thì bạn vẫn nhận đủ thông báo, bằng câu chữ viết sẵn, và không có dữ liệu nào được gửi cho AI.</details>
+    </div>
     <div id="noticeArea"></div>
     <div class="card" id="bookingCard"></div>
     <div class="card checklist" id="prepCard"></div>
@@ -276,7 +284,7 @@ function themBuoc() {
 async function guiThongBao() {
   $("send").disabled = true;
   try {
-    const kq = await post("/api/thong-bao", { kich_ban: kb.id, lich_da_dat: lichBenhNhanBiet, lich_hien_tai: lichHienTai, da_xong: daXong, ly_do: $("lyDo").value.trim() });
+    const kq = await post("/api/thong-bao", { kich_ban: kb.id, lich_da_dat: lichBenhNhanBiet, lich_hien_tai: lichHienTai, da_xong: daXong, ly_do: $("lyDo").value.trim(), dung_ai: $("dungAI").checked });
     $("facts").textContent = JSON.stringify({ muc_do: kq.muc_do, thay_doi: kq.thay_doi, chuan_bi_moi: kq.chuan_bi_moi, bat_buoc_chua_xong: kq.bat_buoc_chua_xong, che_do: kq.che_do, ghi_chu: kq.ghi_chu }, null, 2);
     veThongBao(kq);
   } finally { $("send").disabled = false; }
@@ -319,7 +327,7 @@ async function hoi(q) {
   $("msgs").append(cho);
   $("msgs").scrollTop = $("msgs").scrollHeight;
   try {
-    const kq = await post("/api/hoi-dap", { kich_ban: kb.id, cau_hoi: q, lich_hien_tai: lichBenhNhanBiet });
+    const kq = await post("/api/hoi-dap", { kich_ban: kb.id, cau_hoi: q, lich_hien_tai: lichBenhNhanBiet, dung_ai: $("dungAI").checked });
     const nhan = { lich: "Về lịch hẹn", chuan_bi: "Về chuẩn bị", y_khoa: "Câu hỏi y khoa · đã chuyển nhân viên y tế", khan_cap: "Khẩn cấp · quy tắc an toàn, không qua AI", khac: "Ngoài phạm vi" }[kq.phan_loai] ?? kq.phan_loai;
     cho.className = `msg bot ${kq.phan_loai}`;
     cho.replaceChildren(kq.tra_loi, el("span", { class: "meta" }, `${nhan} · ${kq.che_do === "ai" ? "AI" : kq.che_do === "mau" ? "mẫu" : "quy tắc"}`));

@@ -1,12 +1,12 @@
 # Kịch bản thử và log thử nghiệm
 
-> **Trạng thái: chưa thử với người thật.** Bảng log dưới đây để trống có chủ đích. Chỉ điền sau khi đã thử thật với 2–3 người. Nhật ký máy ghi lại tự động trong `logs/phien-<ngày>.jsonl` (nút đã bấm, số giây, câu hỏi và cách phân loại) để đối chiếu.
+> **Trạng thái: chưa thử với người thật.** Bảng log dưới đây để trống có chủ đích. Chỉ điền sau khi đã thử thật với 2–3 người. Nhật ký máy ghi lại tự động trong `logs/phien-<ngày>.jsonl` (nút đã bấm, số giây, câu hỏi và cách phân loại, nhà cung cấp và mô hình AI) để đối chiếu.
 
-Chỉ số và mục tiêu đặt trước: [BRD-lite.md, mục 6](BRD-lite.md#6-chỉ-số-thành-công-khi-thử-với-người-dùng).
+Chỉ số và mục tiêu đặt trước: [PRD.md, mục 6](PRD.md#6-tiêu-chí-chấp-nhận-khi-thử-với-người-dùng).
 
 ## Chuẩn bị (5 phút)
 
-1. Chạy prototype: `npm install` rồi `npm start` (có khóa API) hoặc `npm run start:offline` (không AI). Mở http://localhost:3000.
+1. Chạy prototype: `npm install` rồi `npm start` (khóa Claude hoặc GPT trong file `.env`, xem [README](README.md#cách-chạy)) hoặc `npm run start:offline` (không AI). Mở http://localhost:3000. Dòng khởi động trong terminal và nhãn góc màn hình cho biết đang dùng mô hình nào; ghi lại vào ô "Chế độ" dưới đây.
 2. Người điều phối (bạn) ngồi ở máy, người thử chỉ nhìn **màn hình bệnh nhân**. Có thể tick "Chế độ người thử" để ẩn phía bệnh viện, rồi dùng link `?kb=S2&demo=1` để tự gửi thông báo.
 3. Xin đồng ý, nói rõ đây là dữ liệu giả, không hỏi về sức khỏe của người thử.
 
@@ -25,7 +25,9 @@ Không giải thích giao diện trước. Nếu người thử hỏi "bấm gì
 
 ## Log thử nghiệm
 
-Chế độ dùng khi thử: ☐ AI ☐ Mẫu (không AI)
+Chế độ dùng khi thử: ☐ AI: ☐ Claude ☐ GPT, mô hình: ______, prompt: ______ ☐ Mẫu (không AI)
+
+Cả vòng thử dùng một chế độ và một mô hình. Nếu giữa chừng nhật ký máy có dòng `ghi_chu` "Không dùng được AI", người thử đó đã thấy tin nhắn mẫu: ghi vào cột "Gặp gì".
 
 | Người thử | Bối cảnh (ẩn danh) | Kịch bản | Hiểu đúng thay đổi? | Nút bấm, số giây | Gặp gì, vướng ở đâu | Trích dẫn | Đã sửa gì sau đó |
 | --- | --- | --- | --- | --- | --- | --- | --- |
