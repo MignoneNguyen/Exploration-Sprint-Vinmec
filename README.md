@@ -14,20 +14,20 @@ MyVinmec đã có AI ở đầu hành trình: trợ lý MIA gợi ý chuyên kho
 
 **Mức chắc chắn: trung bình – thấp.** Bằng chứng chính là 5/8 trường hợp trên Facebook và 3 review App Store. Chưa người phỏng vấn nào xác nhận, vì không tuyển được người thuộc đúng nhóm người dùng trong thời hạn. Chi tiết và kế hoạch kiểm chứng ở [01-phong-van/03-tong-hop-insight.md](01-phong-van/03-tong-hop-insight.md).
 
-Các mã giả thuyết (H1–H5) và mã nguồn (FB, TT, AS, W, P) được giải thích ở **[GIAI-THICH-MA.md](GIAI-THICH-MA.md)**.
+Các mã giả thuyết (H1–H5) và mã nguồn (FB, TT, AS, W, P) được giải thích ở **[GIAI-THICH-MA.md](GIAI-THICH-MA.md)**. Khung phương pháp (Biodesign, SDLC, PMBOK 10 lĩnh vực, quản lý thay đổi) và lý do chỉ làm BRD rút gọn: **[PHUONG-PHAP.md](PHUONG-PHAP.md)**.
 
 ## Mục lục
 
 | Thư mục | Nội dung | Trạng thái |
 | --- | --- | --- |
+| [slides.pdf](slides.pdf) | Deck 10 slide cho buổi trình bày 10 phút (nguồn: [slides/slides.html](slides/slides.html)) | Xong; slide kết quả thử chờ số liệu |
 | [01-phong-van/](01-phong-van/) | [Ghi chép dùng thử MyVinmec](01-phong-van/00-myvinmec-walkthrough.md) · [Desk research](01-phong-van/01-desk-research.md) · [Interview guide](01-phong-van/02-interview-guide.md) · Phỏng vấn [P1](01-phong-van/survey-logs/P1.md), [P2](01-phong-van/survey-logs/P2.md), [P3](01-phong-van/survey-logs/P3.md), [P4](01-phong-van/survey-logs/P4.md) · [Tổng hợp insight](01-phong-van/03-tong-hop-insight.md) | Xong |
 | [02-journey-map/](02-journey-map/) | Journey map (PNG, PDF, HTML), đánh dấu điểm đau | Xong |
-| [03-need-statement/](03-need-statement/need-statement.md) | Need statement theo Biodesign, bằng chứng, need statement dự phòng | Xong |
+| [03-need-statement/](03-need-statement/need-statement.md) | Need statement theo Biodesign, bằng chứng, need statement dự phòng, sàng lọc nhu cầu (các bên liên quan, ma trận H1–H5) | Xong |
 | [04-best-practice/](04-best-practice/best-practice.md) | 3 best practice quốc tế, nguồn đã đối chiếu, bài học cho Vinmec | Xong |
-| [05-prototype/](05-prototype/README.md) | Prototype có AI, prompt, log thử với 2–3 người | Chưa làm |
-| [06-rui-ro-dao-duc/](06-rui-ro-dao-duc/README.md) | Rủi ro an toàn, đạo đức, đường chuyển tuyến khẩn cấp | Bản nháp |
-| [07-coach-plan/](07-coach-plan/README.md) | "Mình sẽ coach một nhóm làm bài này thế nào" | Khung, chưa viết |
-| `slides.pdf` | Deck tối đa 10 slide | Chưa làm |
+| [05-prototype/](05-prototype/README.md) | [BRD rút gọn](05-prototype/BRD-lite.md), prototype có AI (mã nguồn, 6 kịch bản), [prompt](05-prototype/prompts.md), [kịch bản và log thử](05-prototype/test-log.md) | Prototype xong; **chưa thử với người dùng** |
+| [06-rui-ro-dao-duc/](06-rui-ro-dao-duc/README.md) | Rủi ro an toàn, đạo đức, đường chuyển tuyến khẩn cấp | Bản nháp, đã khớp với prototype |
+| [07-coach-plan/](07-coach-plan/README.md) | "Mình sẽ coach một nhóm làm bài này thế nào" | Bản nháp, cần chỉnh theo giọng người làm |
 
 ## Phần nào do AI tạo
 
@@ -39,7 +39,11 @@ Các mã giả thuyết (H1–H5) và mã nguồn (FB, TT, AS, W, P) được gi
 | Tổng hợp insight, need statement | Diễn đạt, cấu trúc, bảng đối chiếu | Chọn hướng, đánh giá mức chắc chắn, ra quyết định |
 | Journey map | Bố cục và diễn đạt | Ước lượng mức cảm xúc và mức điểm đau |
 | Best practice | Tìm nguồn, tóm tắt, đề xuất bài học, đối chiếu số liệu với nguồn gốc | Chọn ví dụ và bài học áp dụng |
+| Phương pháp, sàng lọc nhu cầu, BRD rút gọn | Ánh xạ các khung vào bài làm, soạn bản nháp | Chọn khung tham chiếu, chấm điểm sàng lọc, duyệt phạm vi |
+| Prototype | Viết code, prompt, kiểm thử tự động | Thử với người dùng, quyết định sửa gì |
 | Rủi ro, đạo đức | Bản nháp | Rà soát, chỉnh theo prototype |
+| Coach plan | Bản nháp theo khung người làm đưa ra | Chỉnh theo cách dẫn dắt của mình |
+| Slides | Soạn nội dung và trình bày từ repo | Duyệt, điền kết quả thử |
 
 Mỗi file có một dòng ghi chú ở cuối, nói rõ phần nào do AI hỗ trợ.
 

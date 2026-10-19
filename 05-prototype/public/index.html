@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lịch hẹn của tôi – prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7F5; --surface:#FFFFFF; --ink:#1C2321; --ink-2:#3F4845; --muted:#5B6461; --line:#D9DEDB;
+  --teal:#0F6E6A; --teal-dk:#0A4F4C; --teal-bg:#CFE6E3;
+  --orange:#C2410C; --orange-bg:#FDEEE6; --amber:#9A6700; --amber-bg:#FFF4D6; --red:#B42318; --red-bg:#FEE4E2;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.5}
+button,input,select{font:inherit}
+.topbar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar h1{margin:0;font-size:18px}
+.disclaimer{font-size:13px;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600}
+.badge.ai{background:var(--teal-bg);color:var(--teal-dk)}
+.badge.mau{background:var(--amber-bg);color:var(--amber)}
+.layout{display:grid;grid-template-columns:minmax(320px,420px) minmax(320px,1fr);gap:24px;padding:24px;max-width:1280px;margin:0 auto}
+body.tester .staff{display:none}
+body.tester .layout{grid-template-columns:minmax(320px,420px);justify-content:center}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px 16px 20px;min-height:760px;display:flex;flex-direction:column;gap:14px}
+.phone-head{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px}
+.phone-head b{font-size:17px}
+.card{border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--surface)}
+.card h3{margin:0 0 6px;font-size:15px}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:2px 10px;font-size:14px}
+.kv dt{color:var(--muted)} .kv dd{margin:0}
+.notice{border-width:2px}
+.notice.lon{border-color:var(--orange);background:var(--orange-bg)}
+.notice.vua{border-color:#E0A800;background:var(--amber-bg)}
+.notice.nhac_nho,.notice.khong_doi{border-color:var(--teal);background:#EEF7F6}
+.notice .src{font-size:12px;color:var(--muted);margin-bottom:6px}
+.notice h3{font-size:16px}
+.changes{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px;background:var(--surface);border-radius:8px;overflow:hidden}
+.changes th,.changes td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.changes th{font-weight:600;color:var(--muted);font-size:12px}
+.changes td.old{color:var(--muted);text-decoration:line-through}
+.changes td.new{font-weight:600}
+ul.todo{margin:6px 0 0;padding-left:20px}
+.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.btn{min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 12px;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8CC7C1;outline-offset:2px}
+.checklist label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:14px;cursor:pointer}
+.checklist input{width:20px;height:20px;margin-top:2px}
+.tag{font-size:11px;font-weight:600;padding:1px 6px;border-radius:6px;background:var(--orange-bg);color:var(--orange);margin-left:4px}
+.due{color:var(--muted);font-size:12px;display:block}
+.chat{display:flex;flex-direction:column;gap:8px}
+.msgs{display:flex;flex-direction:column;gap:8px;max-height:260px;overflow:auto}
+.msg{padding:8px 12px;border-radius:12px;font-size:14px;white-space:pre-line;max-width:92%}
+.msg.me{align-self:flex-end;background:var(--teal);color:#fff}
+.msg.bot{align-self:flex-start;background:#EEF1EF}
+.msg.bot.y_khoa{background:var(--amber-bg);border:1px solid #E0A800}
+.msg.bot.khan_cap{background:var(--red-bg);border:2px solid var(--red);color:#5A1209;font-weight:600}
+.msg .meta{display:block;font-size:11px;font-weight:400;opacity:.8;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 10px;font-size:13px;cursor:pointer;min-height:36px}
+.ask{display:flex;gap:8px}
+.ask input{flex:1;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;display:none;max-width:90vw}
+.staff{display:flex;flex-direction:column;gap:16px}
+.staff h2{margin:0;font-size:16px}
+.staff .hint{font-size:13px;color:var(--muted);margin:0}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 14px}
+.form label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink-2)}
+.form input,.form select{min-height:40px;border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:#fff}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+pre.facts{background:#1C2321;color:#E6ECEA;border-radius:10px;padding:12px;font-size:12px;overflow:auto;max-height:280px;margin:0}
+.empty{color:var(--muted);font-size:14px}
+@media (max-width:760px){.layout{grid-template-columns:1fr;padding:16px}.actions{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1>Lịch hẹn của tôi <span id="modeBadge" class="badge">…</span></h1>
+    <div class="disclaimer">Prototype bài tập, dữ liệu tự mô phỏng. Không phải ứng dụng chính thức của Vinmec.</div>
+  </div>
+  <div class="controls">
+    <label>Kịch bản <select id="scenario"></select></label>
+    <button class="btn" id="reset" type="button">Đặt lại</button>
+    <label><input type="checkbox" id="testerMode"> Chế độ người thử (ẩn phía bệnh viện)</label>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="phone" aria-label="Màn hình bệnh nhân">
+    <div class="phone-head"><b>Lịch hẹn của tôi</b><span class="disclaimer" id="patientName"></span></div>
+    <div id="noticeArea"></div>
+    <div class="card" id="bookingCard"></div>
+    <div class="card checklist" id="prepCard"></div>
+    <div class="card chat">
+      <h3>Hỏi về lịch hẹn</h3>
+      <div class="msgs" id="msgs" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <form class="ask" id="askForm">
+        <label for="question" class="disclaimer" style="position:absolute;left:-9999px">Câu hỏi</label>
+        <input id="question" placeholder="Ví dụ: Mấy giờ tôi khám?" autocomplete="off">
+        <button class="btn primary" type="submit">Gửi</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="staff" aria-label="Mô phỏng phía bệnh viện">
+    <div class="card">
+      <h2>Phía bệnh viện (mô phỏng)</h2>
+      <p class="hint">Người điều phối sửa lịch hiện tại rồi gửi thông báo. Hệ thống (code, không phải AI) so lịch hiện tại với lịch bệnh nhân đã biết; AI chỉ viết lời nhắn.</p>
+    </div>
+    <div class="card">
+      <div class="form" id="staffForm"></div>
+      <div class="form" style="margin-top:12px">
+        <label>Lý do thay đổi (tùy chọn)<input id="lyDo"></label>
+      </div>
+      <h3 style="margin-top:16px">Thêm bước chuẩn bị</h3>
+      <div class="form">
+        <label>Nội dung<input id="prepText" placeholder="Ví dụ: Mang kết quả xét nghiệm"></label>
+        <label>Hạn<input id="prepDue" placeholder="Ví dụ: Trước ngày khám 1 ngày"></label>
+        <label style="flex-direction:row;align-items:center;gap:8px"><input type="checkbox" id="prepReq" checked> Bắt buộc</label>
+      </div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn" id="addPrep" type="button">Thêm bước</button>
+        <button class="btn" id="preset" type="button">Áp thay đổi mẫu của kịch bản</button>
+        <button class="btn primary" id="send" type="button">Gửi thông báo cho bệnh nhân</button>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Dữ kiện hệ thống tính (gửi cho AI)</h3>
+      <pre class="facts" id="facts">Chưa gửi thông báo.</pre>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, attrs = {}, ...children) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v);
+  }
+  for (const c of children) if (c != null) n.append(c);
+  return n;
+};
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const TRANG_THAI = { da_xac_nhan: "Đã xác nhận", cho_tong_dai_xac_nhan: "Chờ tổng đài xác nhận", da_huy: "Đã hủy" };
+const ngayVN = (s) => { const [y, m, d] = String(s).split("-"); return d ? `${d}/${m}/${y}` : s; };
+const CAU_HOI_GOI_Y = [
+  "Mấy giờ tôi khám, ở phòng nào?",
+  "Tôi cần mang gì?",
+  "Đổi bác sĩ thì có ảnh hưởng gì đến em bé không?",
+  "Tôi đang bị ra máu nhiều",
+];
+
+let DATA, kb, lichBenhNhanBiet, lichHienTai, daXong, thongBaoLuc = null, thongBaoMucDo = null;
+
+async function init() {
+  const [data, cheDo] = await Promise.all([
+    fetch("/data/scenarios.json").then((r) => r.json()),
+    fetch("/api/che-do").then((r) => r.json()),
+  ]);
+  DATA = data;
+  const b = $("modeBadge");
+  b.textContent = cheDo.che_do === "ai" ? `AI · ${cheDo.model}` : "Chế độ mẫu, không AI";
+  b.className = "badge " + (cheDo.che_do === "ai" ? "ai" : "mau");
+  for (const k of DATA.kich_ban) $("scenario").append(el("option", { value: k.id }, `${k.id} · ${k.ten}`));
+  for (const q of CAU_HOI_GOI_Y) $("chips").append(el("button", { class: "chip", type: "button", onclick: () => hoi(q) }, q));
+  $("scenario").addEventListener("change", () => napKichBan($("scenario").value));
+  $("reset").addEventListener("click", () => napKichBan(kb.id));
+  $("testerMode").addEventListener("change", (e) => document.body.classList.toggle("tester", e.target.checked));
+  $("preset").addEventListener("click", apMau);
+  $("addPrep").addEventListener("click", themBuoc);
+  $("send").addEventListener("click", guiThongBao);
+  $("askForm").addEventListener("submit", (e) => { e.preventDefault(); const q = $("question").value.trim(); if (q) { $("question").value = ""; hoi(q); } });
+  // ?kb=S2 chọn kịch bản; &demo=1 tự áp thay đổi mẫu và gửi thông báo; &tester=1 ẩn phía bệnh viện.
+  const p = new URLSearchParams(location.search);
+  const batDau = DATA.kich_ban.some((k) => k.id === p.get("kb")) ? p.get("kb") : DATA.kich_ban[0].id;
+  $("scenario").value = batDau;
+  napKichBan(batDau);
+  if (p.get("tester") === "1") { $("testerMode").checked = true; document.body.classList.add("tester"); }
+  if (p.get("demo") === "1") { apMau(); await guiThongBao(); }
+}
+
+function napKichBan(id) {
+  kb = DATA.kich_ban.find((k) => k.id === id);
+  lichBenhNhanBiet = clone(kb.lich_da_dat);
+  lichHienTai = clone(kb.lich_da_dat);
+  daXong = [];
+  thongBaoLuc = null;
+  $("patientName").textContent = kb.benh_nhan;
+  $("noticeArea").replaceChildren();
+  $("msgs").replaceChildren(el("div", { class: "msg bot" }, "Chào anh/chị, em có thể giúp về lịch hẹn và các bước chuẩn bị cho buổi khám."));
+  $("facts").textContent = "Chưa gửi thông báo.";
+  $("lyDo").value = "";
+  veBenhNhan();
+  veForm();
+}
+
+function veBenhNhan() {
+  const l = lichBenhNhanBiet;
+  $("bookingCard").replaceChildren(
+    el("h3", {}, "Lượt khám sắp tới"),
+    el("dl", { class: "kv" },
+      el("dt", {}, "Dịch vụ"), el("dd", {}, l.dich_vu),
+      el("dt", {}, "Bác sĩ"), el("dd", {}, l.bac_si),
+      el("dt", {}, "Thời gian"), el("dd", {}, `${l.gio}, ${ngayVN(l.ngay)}`),
+      el("dt", {}, "Nơi khám"), el("dd", {}, `${l.phong}, ${l.co_so}`),
+      el("dt", {}, "Trạng thái"), el("dd", {}, TRANG_THAI[l.trang_thai] ?? l.trang_thai)));
+  const ds = lichBenhNhanBiet.chuan_bi;
+  $("prepCard").replaceChildren(el("h3", {}, "Chuẩn bị cho buổi khám"),
+    ...ds.map((c) => {
+      const cb = el("input", { type: "checkbox" });
+      cb.checked = daXong.includes(c.id);
+      cb.addEventListener("change", () => {
+        daXong = cb.checked ? [...new Set([...daXong, c.id])] : daXong.filter((x) => x !== c.id);
+        suKien({ hanh_dong: cb.checked ? "danh_dau_xong" : "bo_danh_dau", buoc: c.id });
+      });
+      return el("label", {}, cb, el("span", {}, c.noi_dung, c.bat_buoc ? el("span", { class: "tag" }, "Bắt buộc") : null, el("span", { class: "due" }, c.han)));
+    }));
+}
+
+function veForm() {
+  const f = $("staffForm");
+  const sel = (key, opts, label) => {
+    const s = el("select", { "data-k": key });
+    for (const [v, t] of opts) { const o = el("option", { value: v }, t); if (v === lichHienTai[key]) o.selected = true; s.append(o); }
+    if (![...s.options].some((o) => o.selected)) { s.append(el("option", { value: lichHienTai[key] }, lichHienTai[key])); s.value = lichHienTai[key]; }
+    s.addEventListener("change", () => (lichHienTai[key] = s.value));
+    return el("label", {}, label, s);
+  };
+  const inp = (key, type, label) => {
+    const i = el("input", { type, "data-k": key });
+    i.value = lichHienTai[key];
+    i.addEventListener("input", () => (lichHienTai[key] = i.value));
+    return el("label", {}, label, i);
+  };
+  const dm = DATA.danh_muc;
+  f.replaceChildren(
+    sel("dich_vu", dm.dich_vu.map((x) => [x, x]), "Dịch vụ"),
+    sel("bac_si", dm.bac_si.map((x) => [x, x]), "Bác sĩ"),
+    sel("co_so", dm.co_so.map((x) => [x, x]), "Cơ sở"),
+    inp("ngay", "date", "Ngày"),
+    inp("gio", "time", "Giờ"),
+    inp("phong", "text", "Phòng"),
+    sel("trang_thai", Object.entries(dm.trang_thai), "Trạng thái"));
+}
+
+function apMau() {
+  const t = kb.thay_doi_tu_phia_vien || {};
+  for (const [k, v] of Object.entries(t)) if (k in lichHienTai && k !== "chuan_bi") lichHienTai[k] = v;
+  if (t.them_chuan_bi) {
+    const ids = new Set(lichHienTai.chuan_bi.map((c) => c.id));
+    lichHienTai.chuan_bi.push(...t.them_chuan_bi.filter((c) => !ids.has(c.id)));
+  }
+  $("lyDo").value = t.ly_do || "";
+  veForm();
+  toast(Object.keys(t).length ? "Đã áp thay đổi mẫu. Bấm “Gửi thông báo” để bệnh nhân nhận." : "Kịch bản này không có thay đổi.");
+}
+
+function themBuoc() {
+  const nd = $("prepText").value.trim();
+  if (!nd) return toast("Nhập nội dung bước chuẩn bị.");
+  lichHienTai.chuan_bi.push({ id: "m" + Date.now(), noi_dung: nd, han: $("prepDue").value.trim() || "Trước buổi khám", bat_buoc: $("prepReq").checked });
+  $("prepText").value = ""; $("prepDue").value = "";
+  toast("Đã thêm bước chuẩn bị vào lịch hiện tại.");
+}
+
+async function guiThongBao() {
+  $("send").disabled = true;
+  try {
+    const kq = await post("/api/thong-bao", { kich_ban: kb.id, lich_da_dat: lichBenhNhanBiet, lich_hien_tai: lichHienTai, da_xong: daXong, ly_do: $("lyDo").value.trim() });
+    $("facts").textContent = JSON.stringify({ muc_do: kq.muc_do, thay_doi: kq.thay_doi, chuan_bi_moi: kq.chuan_bi_moi, bat_buoc_chua_xong: kq.bat_buoc_chua_xong, che_do: kq.che_do, ghi_chu: kq.ghi_chu }, null, 2);
+    veThongBao(kq);
+  } finally { $("send").disabled = false; }
+}
+
+function veThongBao(kq) {
+  const t = kq.tin_nhan;
+  const rows = kq.thay_doi.map((d) => el("tr", {}, el("td", {}, d.ten), el("td", { class: "old" }, d.truoc), el("td", { class: "new" }, d.sau)));
+  const nut = (ma, nhan, primary) => el("button", { class: "btn" + (primary ? " primary" : ""), type: "button", onclick: () => hanhDong(ma, nhan) }, nhan);
+  const card = el("article", { class: `card notice ${kq.muc_do}` },
+    el("div", { class: "src" }, kq.che_do === "ai" ? "Lời nhắn do AI viết từ dữ kiện hệ thống" : "Tin nhắn mẫu (không AI)"),
+    el("h3", {}, t.tieu_de),
+    el("p", { style: "margin:0" }, t.loi_nhan),
+    rows.length ? el("table", { class: "changes" }, el("thead", {}, el("tr", {}, el("th", {}, "Mục"), el("th", {}, "Trước"), el("th", {}, "Bây giờ"))), el("tbody", {}, ...rows)) : null,
+    t.viec_can_lam?.length ? el("div", {}, el("b", { style: "font-size:14px" }, "Việc cần làm"), el("ul", { class: "todo" }, ...t.viec_can_lam.map((v) => el("li", {}, v)))) : null,
+    el("div", { class: "actions" }, nut("xac_nhan", "Xác nhận", true), nut("chon_lich_khac", "Chọn lịch khác"), nut("goi_tong_dai", "Gọi tổng đài")));
+  $("noticeArea").replaceChildren(card);
+  thongBaoLuc = performance.now();
+  thongBaoMucDo = kq.muc_do;
+}
+
+function hanhDong(ma, nhan) {
+  const giay = thongBaoLuc ? Math.round((performance.now() - thongBaoLuc) / 100) / 10 : null;
+  suKien({ hanh_dong: ma, giay_tu_luc_thay_thong_bao: giay, muc_do: thongBaoMucDo });
+  if (ma === "xac_nhan") {
+    lichBenhNhanBiet = clone(lichHienTai);
+    $("noticeArea").replaceChildren();
+    veBenhNhan();
+    toast(`Đã xác nhận lịch mới (${giay ?? "?"} giây).`);
+  } else if (ma === "chon_lich_khac") {
+    toast(`Đã gửi yêu cầu đổi lịch. Tổng đài sẽ gọi lại (mô phỏng). ${giay ?? "?"} giây.`);
+  } else {
+    toast(`Đang gọi tổng đài (mô phỏng). ${giay ?? "?"} giây.`);
+  }
+}
+
+async function hoi(q) {
+  $("msgs").append(el("div", { class: "msg me" }, q));
+  const cho = el("div", { class: "msg bot" }, "…");
+  $("msgs").append(cho);
+  $("msgs").scrollTop = $("msgs").scrollHeight;
+  try {
+    const kq = await post("/api/hoi-dap", { kich_ban: kb.id, cau_hoi: q, lich_hien_tai: lichBenhNhanBiet });
+    const nhan = { lich: "Về lịch hẹn", chuan_bi: "Về chuẩn bị", y_khoa: "Câu hỏi y khoa · đã chuyển nhân viên y tế", khan_cap: "Khẩn cấp · quy tắc an toàn, không qua AI", khac: "Ngoài phạm vi" }[kq.phan_loai] ?? kq.phan_loai;
+    cho.className = `msg bot ${kq.phan_loai}`;
+    cho.replaceChildren(kq.tra_loi, el("span", { class: "meta" }, `${nhan} · ${kq.che_do === "ai" ? "AI" : kq.che_do === "mau" ? "mẫu" : "quy tắc"}`));
+  } catch (e) {
+    cho.textContent = "Không gửi được câu hỏi. Vui lòng thử lại hoặc gọi tổng đài.";
+  }
+  $("msgs").scrollTop = $("msgs").scrollHeight;
+}
+
+function suKien(o) { post("/api/su-kien", { kich_ban: kb.id, ...o }).catch(() => {}); }
+async function post(url, body) {
+  const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+let toastTimer;
+function toast(s) { const t = $("toast"); t.textContent = s; t.style.display = "block"; clearTimeout(toastTimer); toastTimer = setTimeout(() => (t.style.display = "none"), 3200); }
+
+init();
+</script>
+</body>
+</html>

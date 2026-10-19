@@ -1,0 +1,136 @@
+{
+  "_ghi_chu": "Dữ liệu tự mô phỏng cho prototype bài tập. Tên người, bác sĩ, phòng đều là giả. Không phải dữ liệu của Vinmec.",
+  "danh_muc": {
+    "bac_si": ["BS. Minh (giả lập)", "BS. Hà (giả lập)", "BS. Lan (giả lập)", "BS. Quân (giả lập)"],
+    "dich_vu": ["Khám thai định kỳ", "Siêu âm 4D", "Siêu âm 2D", "Khám nhi", "Tiêm chủng", "Khám tiền mê trước sinh"],
+    "co_so": ["Cơ sở A (giả lập)", "Cơ sở B (giả lập)"],
+    "trang_thai": {
+      "da_xac_nhan": "Đã xác nhận",
+      "cho_tong_dai_xac_nhan": "Chờ tổng đài xác nhận",
+      "da_huy": "Đã hủy"
+    }
+  },
+  "kich_ban": [
+    {
+      "id": "S1",
+      "ten": "Đổi bác sĩ không báo trước",
+      "dua_tren": "FB4",
+      "benh_nhan": "Chị A (giả lập), đặt khám thai theo gói",
+      "lich_da_dat": {
+        "dich_vu": "Khám thai định kỳ",
+        "bac_si": "BS. Minh (giả lập)",
+        "co_so": "Cơ sở A (giả lập)",
+        "ngay": "2026-10-22",
+        "gio": "09:00",
+        "phong": "Phòng khám sản 2",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang sổ khám thai và kết quả các lần khám trước", "han": "Sáng ngày khám", "bat_buoc": true },
+          { "id": "c2", "noi_dung": "Đến trước giờ hẹn 15 phút để làm thủ tục", "han": "Sáng ngày khám", "bat_buoc": false }
+        ]
+      },
+      "thay_doi_tu_phia_vien": { "bac_si": "BS. Hà (giả lập)", "ly_do": "Bác sĩ đã đặt có lịch mổ đột xuất" }
+    },
+    {
+      "id": "S2",
+      "ten": "Siêu âm 4D bị chuyển thành 2D",
+      "dua_tren": "FB3a",
+      "benh_nhan": "Chị B (giả lập), đặt siêu âm",
+      "lich_da_dat": {
+        "dich_vu": "Siêu âm 4D",
+        "bac_si": "BS. Lan (giả lập)",
+        "co_so": "Cơ sở A (giả lập)",
+        "ngay": "2026-10-23",
+        "gio": "10:30",
+        "phong": "Phòng siêu âm 3",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang phiếu chỉ định siêu âm", "han": "Sáng ngày khám", "bat_buoc": true }
+        ]
+      },
+      "thay_doi_tu_phia_vien": { "dich_vu": "Siêu âm 2D", "phong": "Phòng siêu âm 1", "ly_do": "Máy siêu âm 4D đang bảo trì" }
+    },
+    {
+      "id": "S3",
+      "ten": "Thêm bước chuẩn bị bắt buộc",
+      "dua_tren": "FB2, FB5",
+      "benh_nhan": "Chị C (giả lập), chuẩn bị nhập viện sinh",
+      "lich_da_dat": {
+        "dich_vu": "Khám thai định kỳ",
+        "bac_si": "BS. Minh (giả lập)",
+        "co_so": "Cơ sở B (giả lập)",
+        "ngay": "2026-10-24",
+        "gio": "08:00",
+        "phong": "Phòng khám sản 1",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang sổ khám thai và giấy tờ tùy thân", "han": "Sáng ngày khám", "bat_buoc": true }
+        ]
+      },
+      "thay_doi_tu_phia_vien": {
+        "them_chuan_bi": [
+          { "id": "c2", "noi_dung": "Khám tiền mê tại Phòng gây mê", "han": "Trước ngày khám 1 ngày", "bat_buoc": true },
+          { "id": "c3", "noi_dung": "Nhịn ăn từ 22 giờ tối hôm trước theo hướng dẫn của khoa", "han": "Tối hôm trước", "bat_buoc": true }
+        ],
+        "ly_do": "Khoa cập nhật quy trình chuẩn bị nhập viện"
+      }
+    },
+    {
+      "id": "S4",
+      "ten": "Trạng thái lịch nhảy về chờ xác nhận",
+      "dua_tren": "FB1",
+      "benh_nhan": "Anh D (giả lập), đặt khám nhi cho con",
+      "lich_da_dat": {
+        "dich_vu": "Khám nhi",
+        "bac_si": "BS. Quân (giả lập)",
+        "co_so": "Cơ sở A (giả lập)",
+        "ngay": "2026-10-22",
+        "gio": "15:00",
+        "phong": "Phòng khám nhi 4",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang sổ tiêm chủng của bé", "han": "Sáng ngày khám", "bat_buoc": true }
+        ]
+      },
+      "thay_doi_tu_phia_vien": { "trang_thai": "cho_tong_dai_xac_nhan", "ly_do": "" }
+    },
+    {
+      "id": "S5",
+      "ten": "Đổi giờ và phòng",
+      "dua_tren": "Biến thể của FB4",
+      "benh_nhan": "Chị E (giả lập), đưa con đi tiêm chủng",
+      "lich_da_dat": {
+        "dich_vu": "Tiêm chủng",
+        "bac_si": "BS. Quân (giả lập)",
+        "co_so": "Cơ sở B (giả lập)",
+        "ngay": "2026-10-25",
+        "gio": "09:00",
+        "phong": "Phòng tiêm 2",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang sổ tiêm chủng của bé", "han": "Sáng ngày khám", "bat_buoc": true }
+        ]
+      },
+      "thay_doi_tu_phia_vien": { "gio": "14:00", "phong": "Phòng tiêm 1", "ly_do": "Điều chỉnh ca làm việc" }
+    },
+    {
+      "id": "S6",
+      "ten": "Không có thay đổi (đối chứng)",
+      "dua_tren": "Kiểm tra AI không báo nhầm",
+      "benh_nhan": "Chị F (giả lập), đặt khám thai theo gói",
+      "lich_da_dat": {
+        "dich_vu": "Khám thai định kỳ",
+        "bac_si": "BS. Hà (giả lập)",
+        "co_so": "Cơ sở A (giả lập)",
+        "ngay": "2026-10-26",
+        "gio": "10:00",
+        "phong": "Phòng khám sản 2",
+        "trang_thai": "da_xac_nhan",
+        "chuan_bi": [
+          { "id": "c1", "noi_dung": "Mang sổ khám thai", "han": "Sáng ngày khám", "bat_buoc": true }
+        ]
+      },
+      "thay_doi_tu_phia_vien": {}
+    }
+  ]
+}

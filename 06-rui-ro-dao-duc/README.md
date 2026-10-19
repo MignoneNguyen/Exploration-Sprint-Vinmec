@@ -1,6 +1,8 @@
 # Rủi ro an toàn, đạo đức và cách giảm thiểu
 
-> **Trạng thái: bản nháp.** Soạn theo hướng prototype trong [05-prototype](../05-prototype/README.md) và bài học từ Dora ([04-best-practice](../04-best-practice/best-practice.md)). Cần cập nhật lại sau khi prototype được làm và thử.
+> **Trạng thái: bản nháp, đã khớp với prototype.** Soạn theo [prototype](../05-prototype/README.md) và bài học từ Dora ([04-best-practice](../04-best-practice/best-practice.md)). Cần cập nhật lại sau khi thử với người dùng.
+>
+> Đã hiện thực trong prototype: R1 (code tính thay đổi, AI chỉ viết lời), R2 (câu y khoa được chuyển nhân viên), R3 (AI chỉ dùng bước chuẩn bị có trong dữ liệu), R4 (chỉ dữ liệu giả lập; khóa API ở máy chủ), đường chuyển tuyến khẩn cấp (từ khóa kiểm tra trước khi gọi AI).
 
 ## 1. Rủi ro và cách giảm thiểu
 

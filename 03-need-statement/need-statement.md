@@ -56,6 +56,40 @@ Bằng chứng: FB3b (gói khám bị hỏi lại mỗi lần), FB7 (hai mã h�
 - [x] Phạm vi hẹp: một khoảnh khắc (sau đặt lịch đến ngày khám), một nhóm người dùng
 - [ ] Được xác nhận bằng phỏng vấn trực tiếp: **chưa**. Kế hoạch: phỏng vấn 3–5 phụ nữ mang thai hoặc phụ huynh đặt lịch trước tại Vinmec, tuyển từ nhóm review Vinmec trên Facebook; xin xem màn hình My visits và thông báo khi lịch thay đổi.
 
+## 6. Sàng lọc nhu cầu (needs screening)
+
+Theo Biodesign, trước khi chọn một nhu cầu để làm tiếp, cần so các nhu cầu ứng viên bằng cùng một bộ tiêu chí. Khung tham chiếu: [PHUONG-PHAP.md](../PHUONG-PHAP.md).
+
+### 6.1 Các bên liên quan (cho H4)
+
+| Bên liên quan | Vai trò với vấn đề | Được gì nếu giải quyết | Mất gì, lo ngại gì |
+| --- | --- | --- | --- |
+| Phụ nữ mang thai, phụ huynh (người đặt lịch) | Người chịu hệ quả: đi lại vô ích, xếp hàng lại | Ít chuyến đi vô ích, yên tâm hơn | Thêm tin nhắn; lo lộ thông tin |
+| Người đi cùng (vợ/chồng, ông bà) | Thường là người đưa đón | Biết trước để sắp xếp | – |
+| Tổng đài, chăm sóc khách hàng | Nhận cuộc gọi kiểm tra lại lịch (FB1) | Ít cuộc gọi lặp lại | Thêm cuộc gọi khi bệnh nhân bấm "chọn lịch khác" |
+| Nhân viên điều phối lịch, lễ tân | Người tạo ra thay đổi (đổi bác sĩ, đổi phòng) | Ít tình huống căng thẳng tại quầy | Phải ghi mọi thay đổi vào hệ thống, thêm việc |
+| Bác sĩ, kỹ thuật viên (siêu âm, thủ thuật) | Bị ảnh hưởng khi bệnh nhân đến mà chưa chuẩn bị đủ (FB2, FB5) | Ít ca phải hủy vì thiếu bước | – |
+| Đội MyVinmec, IT | Sở hữu app và dữ liệu lịch | Tính năng mới sau đặt lịch | Chi phí tích hợp, rủi ro đồng bộ (review App Store về sync chậm) |
+| Lãnh đạo khoa sản, nhi | Người quyết định tiếp nhận giải pháp | Giữ lợi thế "thuận tiện, chắc chắn" (P2, FB4) | Phải thay đổi quy trình |
+
+Nhận xét: người tạo ra thay đổi (điều phối, lễ tân) khác với người chịu hệ quả (bệnh nhân). Vì vậy giải pháp phải làm giảm việc cho phía điều phối, nếu không sẽ khó được tiếp nhận.
+
+### 6.2 Ma trận sàng lọc
+
+Thang điểm 1–3 (3 là tốt nhất cho việc chọn làm tiếp). Điểm là đánh giá của người làm, dựa trên bằng chứng ở các mục trên; chưa có số liệu của Vinmec.
+
+| Tiêu chí | H1 Chọn khoa | H2 Biết giờ có kết quả | H3 Hiểu kết quả | **H4 Lịch đổi không báo** | H5 Hồ sơ tách rời |
+| --- | --- | --- | --- | --- | --- |
+| Mức nghiêm trọng của hệ quả | 1: chọn sai vẫn được hướng dẫn tại chỗ | 1: chỉ phải chờ | 2: lo lắng khi không hiểu | **3**: đi lại vô ích, mất niềm tin, cân nhắc đổi viện | 2: khai lại, khó tìm hồ sơ cũ |
+| Khoảng trống so với giải pháp hiện có | 1: đã có MIA, đặt theo triệu chứng | 1: giờ ước tính in trên phiếu, được gọi/nhắn | 1: có cột ngưỡng và bác sĩ giải thích | **3**: chưa thấy hỗ trợ nào sau khi đặt lịch; trạng thái lịch còn nhảy (FB1) | 2: có liên kết hồ sơ thủ công, qua chăm sóc khách hàng |
+| Số bên liên quan được lợi | 1 | 1 | 1 | **3**: bệnh nhân, tổng đài, bác sĩ, khoa | 2 |
+| Giá trị với Vinmec | 1 | 1 | 2 | **3**: đúng vào lợi thế "thuận tiện, chắc chắn" | 2 |
+| Khả thi trong sprint, an toàn | 3 | 3 | 1: sát ranh giới lời khuyên y khoa | **2**: làm được trên dữ liệu giả lập; triển khai thật cần tích hợp hệ thống lịch | 1: khớp danh tính là dữ liệu nhạy cảm, khó thử bằng dữ liệu giả |
+| **Tổng** | 7 | 7 | 7 | **14** | 9 |
+| Độ mạnh bằng chứng | Mạnh, nhưng là bằng chứng *phản bác* (4/4 tự xử lý được) | Phản bác (0/3) | Yếu (1/3) | **Trung bình**: 5/8 trường hợp Facebook, 0/4 phỏng vấn | Trung bình |
+
+**Kết quả sàng lọc:** H4 dẫn đầu ở mọi tiêu chí trừ khả thi, nhưng độ mạnh bằng chứng mới ở mức trung bình. Quyết định giữ nguyên: H4 làm need statement chính, H5 làm dự phòng. Ưu tiên số một của tuần 1 sprint là phỏng vấn đúng nhóm người dùng để nâng độ mạnh bằng chứng của H4.
+
 ---
 
-*Phần do AI hỗ trợ: diễn đạt và cấu trúc do Claude soạn từ ghi chép discovery; lựa chọn hướng và mức chắc chắn do người làm quyết định.*
+*Phần do AI hỗ trợ: diễn đạt và cấu trúc do Claude soạn từ ghi chép discovery; lựa chọn hướng, điểm sàng lọc và mức chắc chắn do người làm quyết định.*

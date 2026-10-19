@@ -3,3 +3,10 @@ context/
 
 # Cấu hình cục bộ
 .claude/
+
+# Prototype: thư viện cài bằng npm và nhật ký phiên thử (có thể chứa câu người thử gõ)
+node_modules/
+05-prototype/logs/
+
+# Khóa API
+.env
